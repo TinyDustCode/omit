@@ -1,0 +1,20 @@
+{
+  "name": "omit-ui",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "start": "tsc --watch",
+    "build": "pnpm build:es && pnpm build:cjs",
+    "build:es": "tsc",
+    "build:cjs": "tsc --project tsconfig.cjs.json"
+  },
+  "devDependencies": {
+    "react": "~18.2.0",
+    "@types/react": "~18.0.23",
+    "@emotion/react": "~11.10.5",
+    "typescript": "~4.8.4"
+  },
+  "dependencies": {
+    "omit-base": "~1.0.0"
+  }
+}

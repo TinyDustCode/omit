@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
+  "rushVersion": "5.81.0",
+  "pnpmVersion": "6.7.1",
+  "nodeSupportedVersionRange": ">=14.15.0 <15.0.0 || >15.0.0",
+  "gitPolicy": {
+  },
+
+  "repository": {
+
+  },
+  "eventHooks": {
+    "preRushInstall": [],
+    "postRushInstall": [],
+    "preRushBuild": [],
+    "postRushBuild": []
+  },
+
+  "variants": [
+
+  ],
+
+  "projects": [
+    {
+      "packageName": "omit-ui",
+      "projectFolder": "packages/omit-ui"
+    },
+    {
+      "packageName": "omit-base",
+      "projectFolder": "packages/omit-base"
+    },
+    {
+      "packageName": "omit-app",
+      "projectFolder": "packages/omit-app"
+    }
+  ]
+}

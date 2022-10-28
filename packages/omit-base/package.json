@@ -1,0 +1,25 @@
+{
+  "name": "omit-base",
+  "version": "1.0.0",
+  "description": "Omit Framework Base",
+  "main": "index.ts",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "tsc --watch",
+    "build": "pnpm build:es && pnpm build:cjs",
+    "build:es": "tsc",
+    "build:cjs": "tsc --project tsconfig.cjs.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "react": "~18.2.0",
+    "@types/react": "~18.0.23"
+  }
+}
