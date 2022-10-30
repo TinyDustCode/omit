@@ -11,7 +11,7 @@
     "target": "es2017"
   },
   "include": [
-    "base/**/*",
+    "src/**/*",
     "types/**/*",
     "index.ts"
   ],

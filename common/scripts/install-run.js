@@ -186,7 +186,7 @@ function _ensureFolder(folderPath) {
     }
 }
 /**
- * Create missing directories under the specified base directory, and return the resolved directory.
+ * Create missing directories under the specified src directory, and return the resolved directory.
  *
  * Does not support "." or ".." path segments.
  * Assumes the baseFolder exists.

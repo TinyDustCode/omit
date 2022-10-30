@@ -1,9 +1,11 @@
 import {css, SerializedStyles} from '@emotion/react';
-import {OmitThemeTypes} from "../../types/themes";
+import {OmitConfigThemeTypes} from "../../types/config";
 import {ButtonStyle} from "../button/style";
+import {creatBaseStyle} from "./base-style";
 
-export const createBaseStyles = (Theme:OmitThemeTypes): SerializedStyles => {
+export const createBaseStyles = (ConfigTheme:OmitConfigThemeTypes): SerializedStyles => {
     return css({
-        ...ButtonStyle(Theme)
+        ...creatBaseStyle(ConfigTheme),
+        ...ButtonStyle(ConfigTheme)
     })
 }

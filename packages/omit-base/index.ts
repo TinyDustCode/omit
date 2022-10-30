@@ -7,4 +7,5 @@ export type {
     OmitBaseStatusTypes
 } from './types/common';
 
-export {OmitPalette, OmitPaletteDefaultMode} from './base/palette';
+export {OmitPalette} from './src/palette';
+export {OmitDefaultPrefixName, OmitDefaultPaletteMode} from './src/default'

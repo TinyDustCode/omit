@@ -1,3 +1,3 @@
-import {ThemeProvider} from "./provider";
+import {OmitProvider} from "./provider";
 
-export default ThemeProvider
+export default OmitProvider
