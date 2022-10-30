@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
-import {Button, OmitStyles, ThemeProvider} from "omit-ui";
+import {useState} from 'react'
+import {Button, OmitStyles, OmitProvider} from "omit-ui";
 
 function App() {
-  const [mode, setMode] = useState<'light' | 'dark'>('light')
+    const [mode, setMode] = useState<'light' | 'dark'>('light')
     return (
-      <ThemeProvider mode={mode}>
-          <OmitStyles />
-          <div>
-              <button onClick={() => setMode('dark')}>切换</button>
-              <Button>1e32</Button>
-          </div>
-      </ThemeProvider>
-  )
+        <OmitProvider theme={{mode}}>
+            <OmitStyles/>
+            <div>
+                <button onClick={() => setMode('dark')}>切换</button>
+                <Button>1e32</Button>
+            </div>
+        </OmitProvider>
+    )
 }
 
 export default App

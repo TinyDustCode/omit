@@ -134,5 +134,3 @@ export const OmitPalette: OmitPaletteTypes = {
     light: LightPalette,
     dark: DarkPalette
 }
-
-export const OmitPaletteDefaultMode:OmitPaletteModeTypes = 'light'
