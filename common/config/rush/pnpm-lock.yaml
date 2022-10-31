@@ -3,20 +3,20 @@ lockfileVersion: 5.3
 specifiers:
   '@emotion/react': ~11.10.5
   '@rush-temp/omit-app': file:./projects/omit-app.tgz
-  '@rush-temp/omit-base': file:./projects/omit-src.tgz
+  '@rush-temp/omit-base': file:./projects/omit-base.tgz
   '@rush-temp/omit-ui': file:./projects/omit-ui.tgz
   '@types/react': ~18.0.23
   '@types/react-dom': ^18.0.7
   '@vitejs/plugin-react': ^2.2.0
   react: ~18.2.0
   react-dom: ^18.2.0
-  typescript: ^4.6.4
+  typescript: ~4.8.4
   vite: ^3.2.0
 
 dependencies:
   '@emotion/react': 11.10.5_46919afd3b53399cdc2fcc343e5e6e4e
   '@rush-temp/omit-app': file:projects/omit-app.tgz
-  '@rush-temp/omit-base': file:projects/omit-src.tgz
+  '@rush-temp/omit-base': file:projects/omit-base.tgz
   '@rush-temp/omit-ui': file:projects/omit-ui.tgz
   '@types/react': 18.0.23
   '@types/react-dom': 18.0.8
@@ -1119,7 +1119,7 @@ packages:
     dev: false
 
   file:projects/omit-app.tgz:
-    resolution: {integrity: sha512-MjgFz37YL252jarvoRcCok97OIfa4HbMUaNPKHdQMsVX4fXCfFaB5oqm8xC7tE38utxomSycdqRIqfFGb+cXEQ==, tarball: file:projects/omit-app.tgz}
+    resolution: {integrity: sha512-2VBLTgVjw2yXKq8hvPk9wizQAb5eR+Byj2+LVsu6KdaGYGlL3uMIoXWhqpvAk8D9W9udiMCYcNTSXxRG1F+vfQ==, tarball: file:projects/omit-app.tgz}
     name: '@rush-temp/omit-app'
     version: 0.0.0
     dependencies:
@@ -1141,8 +1141,8 @@ packages:
     dev: false
 
   file:projects/omit-base.tgz:
-    resolution: {integrity: sha512-FlPBQvClV2AjsLwQRMn/fujFU7fCWlVuKHqg356xQzYOJ8iQ5m0R+OmonbN0LRlubujjpnCVDirv+E3fooeqag==, tarball: file:projects/omit-src.tgz}
-    name: '@rush-temp/omit-src'
+    resolution: {integrity: sha512-FlPBQvClV2AjsLwQRMn/fujFU7fCWlVuKHqg356xQzYOJ8iQ5m0R+OmonbN0LRlubujjpnCVDirv+E3fooeqag==, tarball: file:projects/omit-base.tgz}
+    name: '@rush-temp/omit-base'
     version: 0.0.0
     dependencies:
       '@types/react': 18.0.23
@@ -1151,7 +1151,7 @@ packages:
     dev: false
 
   file:projects/omit-ui.tgz:
-    resolution: {integrity: sha512-Vlp5xaN2tnjqTwTkaIOz6c2v5kuPWalksikN0c5j19k8s6xa/69hIwv/n+amxB00cAbeQt4eKZGlsdVkrPPksA==, tarball: file:projects/omit-ui.tgz}
+    resolution: {integrity: sha512-71w7oZx1PgVGMEbp6e+dzw93lvpZBZEgGiPjzR5xfsyURWJsn2P2sMARZxtJ1ay1ZE6dN7yELRRhaOXoqGWN7A==, tarball: file:projects/omit-ui.tgz}
     name: '@rush-temp/omit-ui'
     version: 0.0.0
     dependencies:

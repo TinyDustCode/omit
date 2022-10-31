@@ -1,4 +1,4 @@
-export type {OmitPaletteModeTypes, OmitPaletteTypes} from './types/palette';
+export type {OmitPaletteModeTypes, OmitPaletteTypes, OmitFontPaletteTypes} from './types/palette';
 export type {
     OmitBaseNodeTypes,
     OmitBaseSizeTypes,
@@ -7,5 +7,5 @@ export type {
     OmitBaseStatusTypes
 } from './types/common';
 
-export {OmitPalette} from './src/palette';
-export {OmitDefaultPrefixName, OmitDefaultPaletteMode} from './src/default'
+export {OmitPalette, OmitFontPalette} from './src/palette';
+export {OmitDefaultPrefixName, OmitDefaultPaletteMode, OmitRenderPMC} from './src/default'
