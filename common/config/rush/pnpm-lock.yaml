@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@emotion/react': ~11.10.5
   '@rush-temp/omit-app': file:./projects/omit-app.tgz
-  '@rush-temp/omit-base': file:./projects/omit-base.tgz
+  '@rush-temp/omit-injection': file:./projects/omit-injection.tgz
   '@rush-temp/omit-ui': file:./projects/omit-ui.tgz
   '@types/react': ~18.0.23
   '@types/react-dom': ^18.0.7
@@ -16,7 +16,7 @@ specifiers:
 dependencies:
   '@emotion/react': 11.10.5_46919afd3b53399cdc2fcc343e5e6e4e
   '@rush-temp/omit-app': file:projects/omit-app.tgz
-  '@rush-temp/omit-base': file:projects/omit-base.tgz
+  '@rush-temp/omit-injection': file:projects/omit-injection.tgz
   '@rush-temp/omit-ui': file:projects/omit-ui.tgz
   '@types/react': 18.0.23
   '@types/react-dom': 18.0.8
@@ -1140,18 +1140,17 @@ packages:
       - terser
     dev: false
 
-  file:projects/omit-base.tgz:
-    resolution: {integrity: sha512-FlPBQvClV2AjsLwQRMn/fujFU7fCWlVuKHqg356xQzYOJ8iQ5m0R+OmonbN0LRlubujjpnCVDirv+E3fooeqag==, tarball: file:projects/omit-base.tgz}
-    name: '@rush-temp/omit-base'
+  file:projects/omit-injection.tgz:
+    resolution: {integrity: sha512-i19CvPqwtOrxC1xGkgBUSuH8ru/SIB3N1CA/WIKlz5kScvnxYCjmkhCbIdy6Zl+a5q6fwgQzJGKYbLq/igAUbQ==, tarball: file:projects/omit-injection.tgz}
+    name: '@rush-temp/omit-injection'
     version: 0.0.0
     dependencies:
       '@types/react': 18.0.23
       react: 18.2.0
-      typescript: 4.8.4
     dev: false
 
   file:projects/omit-ui.tgz:
-    resolution: {integrity: sha512-71w7oZx1PgVGMEbp6e+dzw93lvpZBZEgGiPjzR5xfsyURWJsn2P2sMARZxtJ1ay1ZE6dN7yELRRhaOXoqGWN7A==, tarball: file:projects/omit-ui.tgz}
+    resolution: {integrity: sha512-IPNu+oymxYAUBSYkdkW3fYlhRBHVQyica9q70uxzO/tse3kYnYVm17q8h3BQ52SEGQ4qgWAkAQX3qfO4bFE+1A==, tarball: file:projects/omit-ui.tgz}
     name: '@rush-temp/omit-ui'
     version: 0.0.0
     dependencies:

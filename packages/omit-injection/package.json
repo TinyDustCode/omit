@@ -1,5 +1,5 @@
 {
-  "name": "omit-base",
+  "name": "omit-injection",
   "version": "1.0.0",
   "description": "Omit Framework Base",
   "main": "index.ts",
