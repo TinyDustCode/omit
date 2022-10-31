@@ -1,4 +1,4 @@
-import {OmitPaletteModeTypes, OmitPaletteTypes} from 'omit-base';
+import {OmitPaletteModeTypes, OmitPaletteTypes} from '../../omit-injection';
 
 export interface OmitConfigTypes {
     prefixName: string;

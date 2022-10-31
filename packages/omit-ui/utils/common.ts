@@ -17,3 +17,19 @@ export function mergeObjectFnc<T, K extends T>(p1: T, p2?: Partial<K>): T {
     }
     return data
 }
+
+/**
+ * @description 渲染className
+ * @param prefixClass 前置class
+ * @param classNames class对象
+ * @return {*} string
+ */
+export function renderClassNames(prefixClass: string, classNames: Record<string, boolean>) {
+    let classNameStr = `${prefixClass}`;
+    for (let key in classNames) {
+        if (classNames[key]) {
+            classNameStr = `${classNameStr} ${key}`
+        }
+    }
+    return classNameStr
+}
