@@ -4,8 +4,10 @@ export type {
     OmitBaseSizeTypes,
     OmitBaseStylePropsTypes,
     OmitBaseOptionBaseTypes,
-    OmitBaseStatusTypes
+    OmitBaseStatusTypes,
+    OmitBaseStyleTypes
 } from './types/common';
 
-export {OmitPalette, OmitFontPalette} from './src/palette';
-export {OmitDefaultPrefixName, OmitDefaultPaletteMode, OmitRenderPMC} from './src/default'
+export {OmitPalette, OmitFontPalette} from './themes/palette';
+export {OmitDefaultPrefixName, OmitDefaultPaletteMode} from './themes/default';
+export {OmitRenderPMC} from './utils'

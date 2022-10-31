@@ -8,7 +8,12 @@ function App() {
             <OmitStyles/>
             <div>
                 <button onClick={() => setMode('dark')}>切换</button>
-                <Button>1e32</Button>
+                <button onClick={() => setMode('dark')}>切换</button>
+                <Button>default</Button>
+                <Button theme='primary' size='large'>primary</Button>
+                <Button theme='success' size='medium'>success</Button>
+                <Button theme='warning' size='small'>warning</Button>
+                <Button theme='danger'>danger</Button>
             </div>
         </OmitProvider>
     )

@@ -1,5 +1,3 @@
-import {OmitFontPalette} from "../src/palette";
-
 type PrimaryColorTypes = {
     p1: string;
     p2: string;

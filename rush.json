@@ -26,8 +26,8 @@
       "projectFolder": "packages/omit-ui"
     },
     {
-      "packageName": "omit-base",
-      "projectFolder": "packages/omit-base"
+      "packageName": "omit-injection",
+      "projectFolder": "packages/omit-injection"
     },
     {
       "packageName": "omit-app",

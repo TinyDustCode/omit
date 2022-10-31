@@ -1,19 +1,39 @@
-import {FC, useMemo} from 'react'
+import {FC, useContext, useMemo} from 'react'
 import {ButtonBaseProps} from "./type";
+import {ConfigContext} from "../../context/config-contenxt";
+import {renderClassNames} from "../../utils/common";
 
 
 export const Button: FC<ButtonBaseProps> = (props) => {
-    const {icon, onClick, children} = props;
+    const {prefixName} = useContext(ConfigContext)
+    const PrefixCName = `${prefixName}_button`;
+    const {
+        icon,
+        theme = 'default',
+        size = 'medium',
+        onClick,
+        children
+    } = props;
 
     const renderButtonContent = useMemo(() => {
-        return 'e3212'
-    }, [icon, children])
+        return children
+    }, [icon, children]);
 
+    const renderClass = useMemo(() => {
+        let classNames = {
+            [`${PrefixCName}_${theme}`]: true,
+            [`${PrefixCName}_${size}`]: true,
+        }
+        return renderClassNames(PrefixCName, classNames)
+    }, [])
+    console.log(renderClass);
     return (
         <button
-            className='omit_button omit_large_button omit_primary_button'
+            className={renderClass}
         >
-            {renderButtonContent}----
+            {renderButtonContent}
         </button>
     )
 }
+
+Button.displayName = 'Button';

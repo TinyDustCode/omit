@@ -1,4 +1,4 @@
-import {OmitPalette, OmitDefaultPaletteMode,OmitDefaultPrefixName} from "omit-base";
+import {OmitPalette, OmitDefaultPaletteMode,OmitDefaultPrefixName} from "../../omit-injection";
 import {OmitConfigTypes, OmitThemeTypes} from "../types/config";
 
 export const OmitDefaultTheme: OmitThemeTypes = {
