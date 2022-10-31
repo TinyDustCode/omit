@@ -18,9 +18,9 @@ const primaryButton = (configTheme: OmitConfigThemeTypes) => {
     const {config: {prefixName}, theme: {palette, mode}} = configTheme
     return {
         [`.${prefixName}_primary_button`]: {
-            background: OmitRenderPMC('primary',mode),
+            background: OmitRenderPMC('primary',mode,palette),
             color:'white',
-            borderColor:OmitRenderPMC('primary',mode),
+            borderColor:OmitRenderPMC('primary',mode,palette),
         }
     }
 }

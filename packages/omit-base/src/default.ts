@@ -1,4 +1,10 @@
-import {OmitPaletteModeTypes, PaletteModeReferTypes, PaletteTypes} from "../types/palette";
+import {
+    OmitPaletteColorTypes,
+    OmitPaletteModeTypes,
+    OmitPaletteTypes,
+    PaletteModeReferTypes,
+    PaletteTypes
+} from "../types/palette";
 import {OmitPalette} from "./palette";
 
 export const OmitDefaultPaletteMode: OmitPaletteModeTypes = 'light';
@@ -26,12 +32,13 @@ const PaletteModeRefer: PaletteModeReferTypes = {
 
 /**
  * @description 通过色板类型和mode去得到light/dark下的主色
- * @param palette 色板类型
+ * @param paletteType  色板类型
  * @param mode 模式
+ * @param paletteData 色板数据
  * @return {*} string
  */
-export const OmitRenderPMC = (palette: PaletteTypes, mode: OmitPaletteModeTypes) => {
-    const paletteData: Record<string, string> = OmitPalette[mode][palette];
-    const selectColor: string = PaletteModeRefer[palette][mode]
-    return paletteData[selectColor]
+export const OmitRenderPMC = (paletteType: PaletteTypes, mode: OmitPaletteModeTypes, paletteData: OmitPaletteTypes) => {
+    const selectPaletteData: Record<string, string> = paletteData[mode][paletteType];
+    const selectColor: string = PaletteModeRefer[paletteType][mode]
+    return selectPaletteData[selectColor]
 }
