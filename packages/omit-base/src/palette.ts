@@ -1,4 +1,8 @@
-import {OmitPaletteColorTypes, OmitPaletteTypes, OmitPaletteModeTypes} from "../types/palette";
+import {
+    OmitPaletteColorTypes,
+    OmitPaletteTypes,
+    OmitFontPaletteTypes
+} from "../types/palette";
 
 // light
 const primary_light = {
@@ -48,22 +52,6 @@ const danger_light = {
     r8: '#b11f26',
     r9: '#951114',
     r10: '#680506',
-}
-const base_light = {
-    d1: '#f3f3f3',
-    d2: '#eeeeee',
-    d3: '#e7e7e7',
-    d4: '#dcdcdc',
-    d5: '#c5c5c5',
-    d6: '#a6a6a6',
-    d7: '#8b8b8b',
-    d8: '#777777',
-    d9: '#5e5e5e',
-    d10: '#4b4b4b',
-    d11: '#383838',
-    d12: '#2c2c2c',
-    d13: '#242424',
-    d14: '#181818',
 }
 // dark
 const primary_dark = {
@@ -120,14 +108,29 @@ const LightPalette: OmitPaletteColorTypes = {
     success: success_light,
     warning: warning_light,
     danger: danger_light,
-    base: base_light,
 }
 const DarkPalette: OmitPaletteColorTypes = {
     primary: primary_dark,
     success: success_dark,
     warning: warning_dark,
     danger: danger_dark,
-    base: base_light,
+}
+
+export const OmitFontPalette:OmitFontPaletteTypes = {
+    d1: '#f3f3f3',
+    d2: '#eeeeee',
+    d3: '#e7e7e7',
+    d4: '#dcdcdc',
+    d5: '#c5c5c5',
+    d6: '#a6a6a6',
+    d7: '#8b8b8b',
+    d8: '#777777',
+    d9: '#5e5e5e',
+    d10: '#4b4b4b',
+    d11: '#383838',
+    d12: '#2c2c2c',
+    d13: '#242424',
+    d14: '#181818',
 }
 
 export const OmitPalette: OmitPaletteTypes = {

@@ -1,3 +1,5 @@
+import {OmitFontPalette} from "../src/palette";
+
 type PrimaryColorTypes = {
     p1: string;
     p2: string;
@@ -46,7 +48,15 @@ type DangerColorTypes = {
     r9: string;
     r10: string;
 }
-type BaseColorTypes = {
+
+export type OmitPaletteColorTypes = {
+    primary: PrimaryColorTypes,
+    success: SuccessColorTypes,
+    warning: WarningColorTypes,
+    danger: DangerColorTypes,
+}
+
+export type OmitFontPaletteTypes = {
     d1: string;
     d2: string;
     d3: string;
@@ -63,13 +73,9 @@ type BaseColorTypes = {
     d14: string;
 }
 
-export type OmitPaletteColorTypes = {
-    primary: PrimaryColorTypes,
-    success: SuccessColorTypes,
-    warning: WarningColorTypes,
-    danger: DangerColorTypes,
-    base: BaseColorTypes
-}
+export type PaletteTypes = 'primary' | 'success' | 'warning' | 'danger';
+
+export type PaletteModeReferTypes = Record<PaletteTypes, { light: string, dark: string }>
 
 export type OmitPaletteModeTypes = 'light' | 'dark';
 

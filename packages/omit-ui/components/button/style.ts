@@ -1,5 +1,6 @@
 import {css, SerializedStyles} from "@emotion/react";
 import {OmitConfigThemeTypes} from "../../types/config";
+import {OmitRenderPMC} from "omit-base";
 
 const buttonSize = (prefixName: string) => ({
     [`.${prefixName}_small_button`]: {
@@ -17,14 +18,14 @@ const primaryButton = (configTheme: OmitConfigThemeTypes) => {
     const {config: {prefixName}, theme: {palette, mode}} = configTheme
     return {
         [`.${prefixName}_primary_button`]: {
-            background: palette[mode].primary.p8,
+            background: OmitRenderPMC('primary',mode),
             color:'white',
-            borderColor:palette[mode].primary.p8,
+            borderColor:OmitRenderPMC('primary',mode),
         }
     }
 }
 
-const baseButton = (configTheme: OmitConfigThemeTypes) => {
+const baseButton =  (configTheme: OmitConfigThemeTypes) => {
     const {config: {prefixName}} = configTheme
     return {
         [`.${prefixName}_button`]:{
@@ -37,7 +38,7 @@ const baseButton = (configTheme: OmitConfigThemeTypes) => {
 
 
 export const ButtonStyle = (configTheme: OmitConfigThemeTypes): SerializedStyles => {
-    const {config: {prefixName},theme:{palette,mode}} = configTheme
+    const {config: {prefixName}} = configTheme
     return css({
         ...baseButton(configTheme),
         ...buttonSize(prefixName),
