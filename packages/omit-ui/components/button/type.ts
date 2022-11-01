@@ -2,8 +2,9 @@ import {OmitBaseSizeTypes, OmitBaseNodeTypes, OmitBaseStyleTypes} from "../../ty
 
 import {OmitClickEvent} from "../../types/events";
 
-export type OmitButtonVariantTypes = 'base' | 'outline' | 'dashed' | 'text' | 'icon';
-export type OmitButtonThemeTypes = 'default' | 'primary' | 'success' | 'warning' | 'danger'
+export type OmitButtonVariantTypes = 'base' | 'outline' | 'dashed' | 'text';
+export type OmitButtonThemeTypes = 'primary' | 'success' | 'warning' | 'danger';
+export type OmitButtonShapeTypes = 'rectangle' | 'round' | 'circle'
 
 export interface ButtonBaseProps {
     className?: string;
@@ -11,6 +12,7 @@ export interface ButtonBaseProps {
     theme?: OmitButtonThemeTypes
     type?: OmitButtonVariantTypes;
     size?: OmitBaseSizeTypes;
+    shape?: OmitButtonShapeTypes;
     loading?: boolean;
     disabled?: boolean;
     icon?: OmitBaseNodeTypes;
