@@ -4,19 +4,31 @@ import {renderPaletteColor} from '../../utils/palette'
 
 const buttonSize = (prefixName: string) => css({
     [`.${prefixName}_button_small`]: {
-        padding: '2px 8px'
+        padding: '0 7px',
+        fontSize: '12px',
+        height: '24px',
+        lineHeight:'20px',
     },
     [`.${prefixName}_button_medium`]: {
-        padding: '5px 16px'
+        padding: '0 15px',
+        height: '32px',
+        fontSize: '14px',
+        lineHeight:'22px',
     },
     [`.${prefixName}_button_large`]: {
-        padding: '8px 24px'
+        padding: '0 24px',
+        fontSize: '16px',
+        height: '40px',
+        lineHeight:'24px',
     }
 })
 
+/*
+* theme
+* */
 const primaryButton = (configTheme: OmitConfigThemeTypes) => {
     const {config: {prefixName}, theme: {palette, mode}} = configTheme;
-    const {main, hover} = renderPaletteColor('primary', mode, palette);
+    const {main, hover, active} = renderPaletteColor('primary', mode, palette);
     return css({
         [`.${prefixName}_button_primary`]: {
             background: main,
@@ -24,14 +36,17 @@ const primaryButton = (configTheme: OmitConfigThemeTypes) => {
             '&:hover': {
                 background: hover,
                 borderColor: hover,
+            },
+            '&:active': {
+                background: active,
+                borderColor: active,
             }
         }
     })
 }
-
 const successButton = (configTheme: OmitConfigThemeTypes) => {
     const {config: {prefixName}, theme: {palette, mode}} = configTheme;
-    const {main, hover} = renderPaletteColor('success', mode, palette);
+    const {main, hover, active} = renderPaletteColor('success', mode, palette);
     return css({
         [`.${prefixName}_button_success`]: {
             background: main,
@@ -39,14 +54,17 @@ const successButton = (configTheme: OmitConfigThemeTypes) => {
             '&:hover': {
                 background: hover,
                 borderColor: hover,
+            },
+            '&:active': {
+                background: active,
+                borderColor: active,
             }
         }
     })
 }
-
 const warningButton = (configTheme: OmitConfigThemeTypes) => {
     const {config: {prefixName}, theme: {palette, mode}} = configTheme;
-    const {main, hover} = renderPaletteColor('warning', mode, palette);
+    const {main, hover, active} = renderPaletteColor('warning', mode, palette);
     return css({
         [`.${prefixName}_button_warning`]: {
             background: main,
@@ -54,14 +72,17 @@ const warningButton = (configTheme: OmitConfigThemeTypes) => {
             '&:hover': {
                 background: hover,
                 borderColor: hover,
+            },
+            '&:active': {
+                background: active,
+                borderColor: active,
             }
         }
     })
 }
-
 const dangerButton = (configTheme: OmitConfigThemeTypes) => {
     const {config: {prefixName}, theme: {palette, mode}} = configTheme
-    const {main, hover} = renderPaletteColor('danger', mode, palette);
+    const {main, hover, active} = renderPaletteColor('danger', mode, palette);
     return css({
         [`.${prefixName}_button_danger`]: {
             background: main,
@@ -69,21 +90,61 @@ const dangerButton = (configTheme: OmitConfigThemeTypes) => {
             '&:hover': {
                 background: hover,
                 borderColor: hover,
+            },
+            '&:active': {
+                background: active,
+                borderColor: active,
             }
         }
     })
 }
 
+/*
+* shape
+* */
+const rectangleShape = (prefixName: string) => css({
+    [`.${prefixName}_button_rectangle`]: {
+        borderRadius: '3px',
+    }
+})
+const roundShape = (prefixName: string) => css({
+    [`.${prefixName}_button_round`]: {
+        borderRadius: '999px',
+    }
+})
+const circleShape = (prefixName: string) => css({
+    [`.${prefixName}_button_circle`]: {
+        borderRadius: '50%',
+        [`&.${prefixName}_button_small`]: {
+            width: 24,
+            padding: 0
+        },
+        [`&.${prefixName}_button_medium`]: {
+            width: 32,
+            padding: 0
+        },
+        [`&.${prefixName}_button_large`]: {
+            width: 40,
+            padding: 0
+        }
+    }
+})
 
 const baseButton = (configTheme: OmitConfigThemeTypes) => {
     const {config: {prefixName}} = configTheme
     return css({
         [`.${prefixName}_button`]: {
+            border: '1px solid transparent',
             cursor: 'pointer',
-            borderWidth: '1px',
-            borderStyle: 'solid',
             borderRadius: '3px',
             color: 'white',
+            transition: 'all .2s linear',
+            outline: 'none',
+            padding: 0,
+            margin: 0,
+            display: 'inline-flex',
+            alignItems:'center',
+            justifyContent:'center'
         }
     })
 }
@@ -97,5 +158,8 @@ export const ButtonStyle = (configTheme: OmitConfigThemeTypes): SerializedStyles
       ${successButton(configTheme)}
       ${warningButton(configTheme)}
       ${dangerButton(configTheme)}
+      ${rectangleShape(prefixName)}
+      ${roundShape(prefixName)}
+      ${circleShape(prefixName)}
     `
 }

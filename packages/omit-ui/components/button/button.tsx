@@ -9,8 +9,10 @@ export const Button: FC<ButtonBaseProps> = (props) => {
     const PrefixCName = `${prefixName}_button`;
     const {
         icon,
-        theme = 'default',
+        theme = 'primary',
         size = 'medium',
+        type = 'base',
+        shape = 'rectangle',
         onClick,
         children
     } = props;
@@ -23,14 +25,16 @@ export const Button: FC<ButtonBaseProps> = (props) => {
         let classNames = {
             [`${PrefixCName}_${theme}`]: true,
             [`${PrefixCName}_${size}`]: true,
+            [`${PrefixCName}_${shape}`]: true,
         }
         return renderClassNames(PrefixCName, classNames)
     }, [])
+
     return (
         <button
             className={renderClass}
         >
-            {renderButtonContent}
+            <span>{renderButtonContent}</span>
         </button>
     )
 }
