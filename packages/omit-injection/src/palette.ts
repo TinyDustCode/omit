@@ -1,7 +1,7 @@
 import {
     OmitPaletteColorTypes,
     OmitPaletteTypes,
-    OmitFontPaletteTypes
+    OmitFontPaletteTypes, OmitModePaletteTypes
 } from "../types/palette";
 
 // light
@@ -133,7 +133,7 @@ export const OmitFontPalette:OmitFontPaletteTypes = {
     d14: '#181818',
 }
 
-export const OmitPalette: OmitPaletteTypes = {
+export const OmitPalette: OmitModePaletteTypes = {
     light: LightPalette,
     dark: DarkPalette
 }
