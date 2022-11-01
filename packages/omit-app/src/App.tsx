@@ -7,9 +7,8 @@ function App() {
         <OmitProvider theme={{mode}}>
             <OmitStyles/>
             <div>
-                <button onClick={() => setMode('dark')}>切换</button>
-                <button onClick={() => setMode('dark')}>切换</button>
-                <Button>default</Button>
+                <button onClick={() => setMode('dark')}>dark</button>
+                <button onClick={() => setMode('light')}>light</button>
                 <Button theme='primary' size='large'>primary</Button>
                 <Button theme='success' size='medium'>success</Button>
                 <Button theme='warning' size='small'>warning</Button>

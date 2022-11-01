@@ -71,13 +71,11 @@ export type OmitFontPaletteTypes = {
     d14: string;
 }
 
-export type PaletteTypes = 'primary' | 'success' | 'warning' | 'danger';
+export type OmitPaletteTypes = 'primary' | 'success' | 'warning' | 'danger';
 
-export type PaletteModeReferTypes = Record<PaletteTypes, { light: string, dark: string }>
+export type OmitModeTypes = 'light' | 'dark';
 
-export type OmitPaletteModeTypes = 'light' | 'dark';
-
-export type OmitPaletteTypes = {
+export type OmitModePaletteTypes = {
     light: OmitPaletteColorTypes;
     dark: OmitPaletteColorTypes;
 }

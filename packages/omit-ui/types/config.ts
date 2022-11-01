@@ -1,12 +1,12 @@
-import {OmitPaletteModeTypes, OmitPaletteTypes} from '../../omit-injection';
+import {OmitModePaletteTypes, OmitModeTypes} from 'omit-injection';
 
 export interface OmitConfigTypes {
     prefixName: string;
 }
 
 export interface OmitThemeTypes {
-    palette: OmitPaletteTypes,
-    mode: OmitPaletteModeTypes
+    palette: OmitModePaletteTypes,
+    mode: OmitModeTypes
 }
 
 export type OmitConfigThemeTypes = {
