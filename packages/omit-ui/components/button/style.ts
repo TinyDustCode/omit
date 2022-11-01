@@ -1,6 +1,26 @@
 import {css, SerializedStyles} from "@emotion/react";
 import {OmitConfigThemeTypes} from "../../types/config";
 import {renderPaletteColor} from '../../utils/palette'
+import {OmitModePaletteTypes, OmitModeTypes, OmitPaletteTypes} from "omit-injection";
+
+// todo 需要改进下本页面的样式获取  目前过于分散
+const renderColor = (type:OmitPaletteTypes,mode:OmitModeTypes,palette:OmitModePaletteTypes,bg?:string) => {
+    const {main,hover,active} = renderPaletteColor(type, mode, palette);
+    return {
+        color:main,
+        borderColor:main,
+        '&:hover': {
+            background: bg,
+            borderColor: hover,
+            color:hover,
+        },
+        '&:active': {
+            background: bg,
+            borderColor: active,
+            color:active,
+        }
+    }
+};
 
 const buttonSize = (prefixName: string) => css({
     [`.${prefixName}_button_small`]: {
@@ -8,18 +28,27 @@ const buttonSize = (prefixName: string) => css({
         fontSize: '12px',
         height: '24px',
         lineHeight:'20px',
+        [`& ${prefixName}_button_icon`]:{
+            fontSize:12
+        }
     },
     [`.${prefixName}_button_medium`]: {
         padding: '0 15px',
         height: '32px',
         fontSize: '14px',
         lineHeight:'22px',
+        [`& ${prefixName}_button_icon`]:{
+            fontSize:16
+        }
     },
     [`.${prefixName}_button_large`]: {
         padding: '0 24px',
         fontSize: '16px',
         height: '40px',
         lineHeight:'24px',
+        [`& ${prefixName}_button_icon`]:{
+            fontSize:20
+        }
     }
 })
 
@@ -130,6 +159,43 @@ const circleShape = (prefixName: string) => css({
     }
 })
 
+const iconButton = (prefixName: string) => css({
+    [`.${prefixName}_button_icon+.${prefixName}_button_text:not(:empty)`]: {
+        marginLeft:'8px'
+    }
+})
+
+// variant
+const renderVariantPaletteColor = (prefixName:string,mode:OmitModeTypes,palette:OmitModePaletteTypes) => {
+    return {
+        [`&.${prefixName}_button_primary`]: renderColor('primary', mode, palette),
+        [`&.${prefixName}_button_success`]: renderColor('success', mode, palette),
+        [`&.${prefixName}_button_warning`]: renderColor('warning', mode, palette),
+        [`&.${prefixName}_button_danger`]: renderColor('danger', mode, palette),
+    }
+}
+const outlineButton = (configTheme: OmitConfigThemeTypes) => {
+    const {theme:{palette,mode},config:{prefixName}} = configTheme;
+    return css({
+        [`&.${prefixName}_button_outline`]: {
+           background:'transparent',
+            ...renderVariantPaletteColor(prefixName,mode,palette),
+        }
+    })
+}
+const dashedButton = (configTheme: OmitConfigThemeTypes) => {
+    const {theme:{palette,mode},config:{prefixName}} = configTheme;
+    return css({
+        [`&.${prefixName}_button_dashed`]: {
+            background:'transparent',
+            borderStyle:'dashed',
+            ...renderVariantPaletteColor(prefixName,mode,palette),
+        }
+    })
+}
+
+
+
 const baseButton = (configTheme: OmitConfigThemeTypes) => {
     const {config: {prefixName}} = configTheme
     return css({
@@ -161,5 +227,8 @@ export const ButtonStyle = (configTheme: OmitConfigThemeTypes): SerializedStyles
       ${rectangleShape(prefixName)}
       ${roundShape(prefixName)}
       ${circleShape(prefixName)}
+      ${iconButton(prefixName)}
+      ${outlineButton(configTheme)}
+      ${dashedButton(configTheme)}
     `
 }

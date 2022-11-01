@@ -4,8 +4,8 @@ import {ButtonStyle} from "../button/style";
 import {creatBaseStyle} from "./base-style";
 
 export const createBaseStyles = (ConfigTheme:OmitConfigThemeTypes): SerializedStyles => {
-    return css({
-        ...creatBaseStyle(ConfigTheme),
-        ...ButtonStyle(ConfigTheme)
-    })
+    return css`
+      ${creatBaseStyle(ConfigTheme)}
+      ${ButtonStyle(ConfigTheme)}
+    `
 }
