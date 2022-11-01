@@ -26,7 +26,6 @@ export const Button: FC<ButtonBaseProps> = (props) => {
         }
         return renderClassNames(PrefixCName, classNames)
     }, [])
-    console.log(renderClass);
     return (
         <button
             className={renderClass}

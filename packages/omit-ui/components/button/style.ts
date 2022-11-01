@@ -1,6 +1,6 @@
 import {css, SerializedStyles} from "@emotion/react";
 import {OmitConfigThemeTypes} from "../../types/config";
-import {OmitRenderPMC} from "../../../omit-injection";
+import {renderPaletteColor} from '../../utils/palette'
 
 const buttonSize = (prefixName: string) => css({
     [`.${prefixName}_button_small`]: {
@@ -15,45 +15,61 @@ const buttonSize = (prefixName: string) => css({
 })
 
 const primaryButton = (configTheme: OmitConfigThemeTypes) => {
-    const {config: {prefixName}, theme: {palette, mode}} = configTheme
+    const {config: {prefixName}, theme: {palette, mode}} = configTheme;
+    const {main, hover} = renderPaletteColor('primary', mode, palette);
     return css({
         [`.${prefixName}_button_primary`]: {
-            background: OmitRenderPMC('primary', mode, palette),
-            color: 'white',
-            borderColor: OmitRenderPMC('primary', mode, palette),
+            background: main,
+            borderColor: main,
+            '&:hover': {
+                background: hover,
+                borderColor: hover,
+            }
         }
     })
 }
 
 const successButton = (configTheme: OmitConfigThemeTypes) => {
-    const {config: {prefixName}, theme: {palette, mode}} = configTheme
+    const {config: {prefixName}, theme: {palette, mode}} = configTheme;
+    const {main, hover} = renderPaletteColor('success', mode, palette);
     return css({
         [`.${prefixName}_button_success`]: {
-            background: OmitRenderPMC('success', mode, palette),
-            color: 'white',
-            borderColor: OmitRenderPMC('success', mode, palette),
+            background: main,
+            borderColor: main,
+            '&:hover': {
+                background: hover,
+                borderColor: hover,
+            }
         }
     })
 }
 
 const warningButton = (configTheme: OmitConfigThemeTypes) => {
-    const {config: {prefixName}, theme: {palette, mode}} = configTheme
+    const {config: {prefixName}, theme: {palette, mode}} = configTheme;
+    const {main, hover} = renderPaletteColor('warning', mode, palette);
     return css({
         [`.${prefixName}_button_warning`]: {
-            background: OmitRenderPMC('warning', mode, palette),
-            color: 'white',
-            borderColor: OmitRenderPMC('warning', mode, palette),
+            background: main,
+            borderColor: main,
+            '&:hover': {
+                background: hover,
+                borderColor: hover,
+            }
         }
     })
 }
 
 const dangerButton = (configTheme: OmitConfigThemeTypes) => {
     const {config: {prefixName}, theme: {palette, mode}} = configTheme
+    const {main, hover} = renderPaletteColor('danger', mode, palette);
     return css({
         [`.${prefixName}_button_danger`]: {
-            background: OmitRenderPMC('danger', mode, palette),
-            color: 'white',
-            borderColor: OmitRenderPMC('danger', mode, palette),
+            background: main,
+            borderColor: main,
+            '&:hover': {
+                background: hover,
+                borderColor: hover,
+            }
         }
     })
 }
@@ -66,7 +82,8 @@ const baseButton = (configTheme: OmitConfigThemeTypes) => {
             cursor: 'pointer',
             borderWidth: '1px',
             borderStyle: 'solid',
-            borderRadius:'3px'
+            borderRadius: '3px',
+            color: 'white',
         }
     })
 }
