@@ -15,4 +15,8 @@ rush update
 cd packages/omit-app
 npm run dev
 ```
+- 安装以来
+```
+rush add -p xxxx --dev
+```
 持续更新...

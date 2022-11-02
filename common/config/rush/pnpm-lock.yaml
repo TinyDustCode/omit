@@ -467,6 +467,11 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: false
 
+  /@remix-run/router/1.0.2:
+    resolution: {integrity: sha512-GRSOFhJzjGN+d4sKHTMSvNeUPoZiDHWmRnXfzaxrqe7dE/Nzlc8BiMSJdLDESZlndM7jIUrZ/F4yWqVYlI0rwQ==}
+    engines: {node: '>=14'}
+    dev: false
+
   /@types/node/18.11.7:
     resolution: {integrity: sha512-LhFTglglr63mNXUSRYD8A+ZAIu5sFqNJ4Y2fPuY7UlrySJH87rRRlhtVmMHplmfk5WkoJGmDjE9oiTfyX94CpQ==}
     dev: false
@@ -558,10 +563,6 @@ packages:
       ansi-styles: 3.2.1
       escape-string-regexp: 1.0.5
       supports-color: 5.5.0
-    dev: false
-
-  /classnames/2.3.2:
-    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
     dev: false
 
   /color-convert/1.9.3:
@@ -991,6 +992,29 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
+  /react-router-dom/6.4.2_react-dom@18.2.0+react@18.2.0:
+    resolution: {integrity: sha512-yM1kjoTkpfjgczPrcyWrp+OuQMyB1WleICiiGfstnQYo/S8hPEEnVjr/RdmlH6yKK4Tnj1UGXFSa7uwAtmDoLQ==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.0.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-router: 6.4.2_react@18.2.0
+    dev: false
+
+  /react-router/6.4.2_react@18.2.0:
+    resolution: {integrity: sha512-Rb0BAX9KHhVzT1OKhMvCDMw776aTYM0DtkxqUBP8dNBom3mPXlfNs76JNGK8wKJ1IZEY1+WGj+cvZxHVk/GiKw==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.0.2
+      react: 18.2.0
+    dev: false
+
   /react/18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
     engines: {node: '>=0.10.0'}
@@ -1065,18 +1089,6 @@ packages:
     engines: {node: '>= 0.4'}
     dev: false
 
-  /tdesign-icons-react/0.1.6_react-dom@18.2.0+react@18.2.0:
-    resolution: {integrity: sha512-YaEPGk4buBh+TRGMciJQBbGhHlYeBBoJvfZxnN4CFohiU4uhg07jGKVbZODS3M23+GdTvbGYa6q2Es5+4ACn3Q==}
-    peerDependencies:
-      react: '>=16.13.1'
-      react-dom: '>=16.13.1'
-    dependencies:
-      '@babel/runtime': 7.19.4
-      classnames: 2.3.2
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-    dev: false
-
   /to-fast-properties/2.0.0:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
     engines: {node: '>=4'}
@@ -1135,7 +1147,7 @@ packages:
     dev: false
 
   file:projects/omit-app.tgz:
-    resolution: {integrity: sha512-PwzN5f7oBqnrKVYFCG0304qHidogm9rqhCktHe1WGNQpeKskehzWPwvLulX72072Xj/FnhThkIQnSec94I8N+w==, tarball: file:projects/omit-app.tgz}
+    resolution: {integrity: sha512-wPaPZKYjGsJnXATGpkhHw1b+WcvglddiH0c+RKZFOuv1vURFMNsOOLY1KDnkIHFZyRVQJsA/0ZlzRokFUVPvJw==, tarball: file:projects/omit-app.tgz}
     name: '@rush-temp/omit-app'
     version: 0.0.0
     dependencies:
@@ -1145,7 +1157,7 @@ packages:
       '@vitejs/plugin-react': 2.2.0_vite@3.2.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      tdesign-icons-react: 0.1.6_react-dom@18.2.0+react@18.2.0
+      react-router-dom: 6.4.2_react-dom@18.2.0+react@18.2.0
       typescript: 4.8.4
       vite: 3.2.0
     transitivePeerDependencies:

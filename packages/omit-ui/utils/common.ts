@@ -24,8 +24,14 @@ export function mergeObjectFnc<T, K extends T>(p1: T, p2?: Partial<K>): T {
  * @param classNames class对象
  * @return {*} string
  */
-export function renderClassNames(prefixClass: string, classNames: Record<string, boolean>) {
+export function renderClassNames(prefixClass: string, classNames: Record<string, boolean> | string[]) {
     let classNameStr = `${prefixClass}`;
+    if (classNames instanceof Array) {
+        const machinedClassName = classNames.reduce((pre, cur): string => {
+            return `${pre} ${cur}`
+        }, classNameStr)
+        return machinedClassName
+    }
     for (let key in classNames) {
         if (classNames[key]) {
             classNameStr = `${classNameStr} ${key}`
