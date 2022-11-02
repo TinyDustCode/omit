@@ -3,7 +3,7 @@ import {OmitBaseSizeTypes, OmitBaseNodeTypes, OmitBaseStyleTypes} from "../../ty
 import {OmitClickEvent} from "../../types/events";
 import {ReactElement} from "react";
 
-export type OmitButtonVariantTypes = 'base' | 'outline' | 'dashed' | 'text';
+export type OmitButtonVariantTypes = 'outline' | 'dashed' | 'text';
 export type OmitButtonThemeTypes = 'primary' | 'success' | 'warning' | 'danger';
 export type OmitButtonShapeTypes = 'rectangle' | 'round' | 'circle'
 
