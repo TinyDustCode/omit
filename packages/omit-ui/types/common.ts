@@ -1,4 +1,4 @@
-import {ReactNode, CSSProperties} from "react";
+import {ReactElement, CSSProperties, ReactNode} from "react";
 
 export type OmitBaseNodeTypes<T = undefined> = T extends undefined ? ReactNode : (props: T) => ReactNode;
 

@@ -1,10 +1,10 @@
 import {FC} from "react";
-import {OmitBaseNodeTypes} from '../../types/common';
 import {OmitConfigTypes, OmitThemeTypes} from '../../types/config';
 import {mergeObjectFnc} from "../../utils/common";
 import {ThemeContext} from '../../context/theme-context';
 import {ConfigContext} from "../../context/config-contenxt";
 import {OmitDefaultConfig, OmitDefaultTheme} from "../../config/config-theme";
+import {OmitBaseNodeTypes} from "../../types/common";
 
 type PropTypes = {
     theme?: Partial<OmitThemeTypes>

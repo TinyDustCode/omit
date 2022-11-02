@@ -30,7 +30,7 @@ export const OmitPaletteInteractionRefer: PaletteInteractionReferTypes = {
         light: {
             hover: 'p6',
             active: 'p9',
-            disabled: 'p3'
+            disabled: 'p5'
         },
         dark: {
             hover: 'p4',
@@ -42,7 +42,7 @@ export const OmitPaletteInteractionRefer: PaletteInteractionReferTypes = {
         light: {
             hover: 'g5',
             active: 'g7',
-            disabled: 'g3'
+            disabled: 'g4'
         },
         dark: {
             hover: 'g4',
@@ -52,9 +52,9 @@ export const OmitPaletteInteractionRefer: PaletteInteractionReferTypes = {
     },
     warning: {
         light: {
-            hover: 'o4',
+            hover: 'o5',
             active: 'o7',
-            disabled: 'o3'
+            disabled: 'o4'
         },
         dark: {
             hover: 'o4',
@@ -66,7 +66,7 @@ export const OmitPaletteInteractionRefer: PaletteInteractionReferTypes = {
         light: {
             hover: 'r5',
             active: 'r7',
-            disabled: 'r3'
+            disabled: 'r4'
         },
         dark: {
             hover: 'r4',
