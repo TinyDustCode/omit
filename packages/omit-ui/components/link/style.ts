@@ -1,10 +1,10 @@
 import { css, SerializedStyles } from '@emotion/react'
-import { OmitConfigThemeTypes } from '../../types/config'
+import {OmitGlobalConfig} from '../../types/provider'
 import { renderPaletteColor } from '../../utils/palette'
-import { OmitFontPalette, OmitModePaletteTypes, OmitModeTypes, OmitPaletteTypes } from "omit-injection";
+import { OmitFontPalette, OmitModePaletteTypes, OmitThemeModeTypes, OmitPaletteTypes } from "omit-injection";
 
 // default
-const defaultLink = (configTheme: OmitConfigThemeTypes) => {
+const defaultLink = (configTheme: OmitGlobalConfig) => {
     const { config: { prefixName } } = configTheme
     return css({
         [`.${prefixName}_link`]: {
@@ -16,8 +16,8 @@ const defaultLink = (configTheme: OmitConfigThemeTypes) => {
 }
 
 // 渲染theme类型样式
-const renderThemeColor = (type: OmitPaletteTypes, mode: OmitModeTypes, palette: OmitModePaletteTypes) => {
-    const { main, hover, active } = renderPaletteColor(type, mode, palette);
+const renderThemeColor = (type: OmitPaletteTypes, mode: OmitThemeModeTypes, palette: OmitModePaletteTypes) => {
+    const { main, hover, active } = renderPaletteColor({type, mode, palette});
     return {
         color: main,
         '&:hover': {
@@ -30,14 +30,14 @@ const renderThemeColor = (type: OmitPaletteTypes, mode: OmitModeTypes, palette: 
 }
 
 // theme 
-const themeLink = (configTheme: OmitConfigThemeTypes) => {
-    const { config: { prefixName }, theme: { palette, mode } } = configTheme;
+const themeLink = (globalConfig: OmitGlobalConfig) => {
+    const {config: {prefixName, themeMode}, theme: {themePalette}} = globalConfig;
     const PrefixCName = `${prefixName}_link`;
     return {
-        [`.${PrefixCName}_primary`]: renderThemeColor('primary', mode, palette),
-        [`.${PrefixCName}_success`]: renderThemeColor('success', mode, palette),
-        [`.${PrefixCName}_warning`]: renderThemeColor('warning', mode, palette),
-        [`.${PrefixCName}_danger`]: renderThemeColor('danger', mode, palette),
+        [`.${PrefixCName}_primary`]: renderThemeColor('primary', themeMode, themePalette),
+        [`.${PrefixCName}_success`]: renderThemeColor('success', themeMode, themePalette),
+        [`.${PrefixCName}_warning`]: renderThemeColor('warning', themeMode, themePalette),
+        [`.${PrefixCName}_danger`]: renderThemeColor('danger', themeMode, themePalette),
     }
 }
 
@@ -66,7 +66,7 @@ const linkSize = (prefixName: string) => {
     }
 }
 
-export const LinkStyle = (configTheme: OmitConfigThemeTypes): SerializedStyles => {
+export const LinkStyle = (configTheme: OmitGlobalConfig): SerializedStyles => {
     const { config: { prefixName } } = configTheme
     return css`
       ${defaultLink(configTheme)},

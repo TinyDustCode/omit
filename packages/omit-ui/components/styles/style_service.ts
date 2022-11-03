@@ -9,5 +9,6 @@ export const createBaseStyles = (globalConfig: OmitGlobalConfig): SerializedStyl
     return css`
       ${creatBaseStyle(globalConfig)}
       ${ButtonStyle(globalConfig)}
+      ${LinkStyle(globalConfig)}
     `
 }
