@@ -10,6 +10,6 @@ export const createBaseStyles = (ConfigTheme:OmitConfigThemeTypes): SerializedSt
     return css({
         ...creatBaseStyle(ConfigTheme),
         ...ButtonStyle(ConfigTheme),
-        ...LinkStyle(ConfigTheme)
+        // ...LinkStyle(ConfigTheme)
     })
 }
