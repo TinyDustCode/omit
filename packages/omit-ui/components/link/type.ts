@@ -11,6 +11,7 @@ export interface linkBaseProps {
     size?: OmitBaseSizeTypes;
     loading?: boolean;
     disabled?: boolean;
+    underline?: boolean;
     // icon?: OmitBaseNodeTypes;
     children?: OmitBaseNodeTypes;
     onClick?: (event: OmitClickEvent) => void

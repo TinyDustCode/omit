@@ -5,16 +5,20 @@ import { renderClassNames } from '../../utils/common';
 
 export const Link: FC<linkBaseProps> = (props) => {
   const {prefixName} = useContext(ConfigContext)
-  
+  // init
   const {
     children,
-    theme = 'default'
+    theme = 'default',
+    size = 'medium',
+    underline = true
   } = props;
   const PrefixCName = `${prefixName}_link`;
   const linkClass = useMemo(() => {
-    const classNames = [
-      `${PrefixCName}_${theme}`,
-    ]
+    const classNames = {
+        [`${PrefixCName}_${theme}`]: true,
+        [`${PrefixCName}_${size}`]: true,
+        [`${PrefixCName}_underline`]: !!underline
+    }
     return renderClassNames(PrefixCName, classNames)
   }, [])
 
