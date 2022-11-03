@@ -3,7 +3,7 @@ import {PaletteModeReferTypes, PaletteInteractionReferTypes} from "../types/refe
 /*
 * 色板模式对照
 * */
-export const OmitPaletteModeRefer: PaletteModeReferTypes = {
+export const OmitPMRefer: PaletteModeReferTypes = {
     primary: {
         light: 'p8',
         dark: 'p6'
@@ -25,7 +25,7 @@ export const OmitPaletteModeRefer: PaletteModeReferTypes = {
 /*
 * 色板交互对照
 * */
-export const OmitPaletteInteractionRefer: PaletteInteractionReferTypes = {
+export const OmitPIRefer: PaletteInteractionReferTypes = {
     primary: {
         light: {
             hover: 'p6',

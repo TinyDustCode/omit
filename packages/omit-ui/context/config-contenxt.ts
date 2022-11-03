@@ -1,7 +1,5 @@
 import {createContext} from "react";
-import {OmitDefaultPrefixName} from "omit-injection";
-import {OmitConfigTypes} from "../types/config";
+import {OmitConfigTypes} from "../types/provider";
+import {OmitDefaultConfig} from "../default/config";
 
-export const ConfigContext = createContext<OmitConfigTypes>({
-    prefixName: OmitDefaultPrefixName
-});
+export const ConfigContext = createContext<OmitConfigTypes>(OmitDefaultConfig);

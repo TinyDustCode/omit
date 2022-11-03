@@ -73,7 +73,7 @@ export type OmitFontPaletteTypes = {
 
 export type OmitPaletteTypes = 'primary' | 'success' | 'warning' | 'danger';
 
-export type OmitModeTypes = 'light' | 'dark';
+export type OmitThemeModeTypes = 'light' | 'dark';
 
 export type OmitModePaletteTypes = {
     light: OmitPaletteColorTypes;

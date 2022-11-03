@@ -1,28 +1,32 @@
-import {OmitModePaletteTypes, OmitModeTypes, OmitPaletteTypes} from 'omit-injection';
-import {OmitPaletteModeRefer, OmitPaletteInteractionRefer} from 'omit-injection';
+import {OmitModePaletteTypes, OmitPaletteTypes, OmitThemeModeTypes} from 'omit-injection';
+import {OmitPMRefer, OmitPIRefer} from 'omit-injection';
+
+type FunctionProps = {
+    type: OmitPaletteTypes;
+    mode: OmitThemeModeTypes;
+    palette: OmitModePaletteTypes
+}
 
 /**
  * @description 通过色板类型和mode去得到light/dark下的主色
- * @param type  色板类型
- * @param mode 模式
- * @param paletteData 色板数据
  * @return {*} string
+ * @param payload
  */
-const renderPMCByMode = (type: OmitPaletteTypes, mode: OmitModeTypes, paletteData: OmitModePaletteTypes) => {
-    const selectPaletteData: Record<string, string> = paletteData[mode][type];
-    const selectColor: string = OmitPaletteModeRefer[type][mode]
+const renderPMCByMode = (payload: FunctionProps) => {
+    const {type, mode, palette} = payload;
+    const selectPaletteData:Record<string, string> = palette[mode][type];
+    const selectColor: string = OmitPMRefer[type][mode]
     return selectPaletteData[selectColor]
 }
 /**
  * @description 通过色板类型和mode获取light/dark下的交互色彩
- * @param type  色板类型
- * @param mode 模式
- * @param paletteData 色板数据
  * @return {*} {hover:string;active:string;disabled:string}
+ * @param payload
  */
-export const renderPICByMode = (type: OmitPaletteTypes, mode: OmitModeTypes, paletteData: OmitModePaletteTypes) => {
-    const selectPaletteData: Record<string, string> = paletteData[mode][type];
-    const {hover, active, disabled} = OmitPaletteInteractionRefer[type][mode];
+export const renderPICByMode = (payload: FunctionProps) => {
+    const {type, mode, palette} = payload
+    const selectPaletteData: Record<string, string> = palette[mode][type];
+    const {hover, active, disabled} = OmitPIRefer[type][mode];
     return {
         hover: selectPaletteData[hover],
         active: selectPaletteData[active],
@@ -31,8 +35,9 @@ export const renderPICByMode = (type: OmitPaletteTypes, mode: OmitModeTypes, pal
 }
 
 // 通过色板类型和mode获取light/dark下的主色与交互色彩
-export const renderPaletteColor = (type: OmitPaletteTypes, mode: OmitModeTypes, paletteData: OmitModePaletteTypes) => {
-    const main = renderPMCByMode(type, mode, paletteData);
-    const {hover, active, disabled} = renderPICByMode(type, mode, paletteData);
+export const renderPaletteColor = (payload: FunctionProps) => {
+    const {type, mode, palette} = payload
+    const main = renderPMCByMode({type, mode, palette});
+    const {hover, active, disabled} = renderPICByMode({type, mode, palette});
     return {main, hover, active, disabled}
 }
