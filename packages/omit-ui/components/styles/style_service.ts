@@ -5,11 +5,10 @@ import {LinkStyle} from "../link/style";
 
 import {creatBaseStyle} from "./base-style";
 
-
 export const createBaseStyles = (ConfigTheme:OmitConfigThemeTypes): SerializedStyles => {
-    return css({
-        ...creatBaseStyle(ConfigTheme),
-        ...ButtonStyle(ConfigTheme),
-        // ...LinkStyle(ConfigTheme)
-    })
+    return css`
+      ${creatBaseStyle(ConfigTheme)}
+      ${ButtonStyle(ConfigTheme)}
+      ${LinkStyle(ConfigTheme)}
+    `
 }

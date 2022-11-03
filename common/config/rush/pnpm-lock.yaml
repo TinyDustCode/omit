@@ -10,6 +10,8 @@ specifiers:
   '@vitejs/plugin-react': ^2.2.0
   react: ~18.2.0
   react-dom: ^18.2.0
+  react-router-dom: ~6.4.2
+  tdesign-icons-react: ~0.1.6
   typescript: ~4.8.4
   vite: ^3.2.0
 
@@ -23,6 +25,8 @@ dependencies:
   '@vitejs/plugin-react': 2.2.0_vite@3.2.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-router-dom: 6.4.2_react-dom@18.2.0+react@18.2.0
+  tdesign-icons-react: 0.1.6_react-dom@18.2.0+react@18.2.0
   typescript: 4.8.4
   vite: 3.2.0
 
@@ -565,6 +569,10 @@ packages:
       supports-color: 5.5.0
     dev: false
 
+  /classnames/2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
+    dev: false
+
   /color-convert/1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
     dependencies:
@@ -1089,6 +1097,18 @@ packages:
     engines: {node: '>= 0.4'}
     dev: false
 
+  /tdesign-icons-react/0.1.6_react-dom@18.2.0+react@18.2.0:
+    resolution: {integrity: sha512-YaEPGk4buBh+TRGMciJQBbGhHlYeBBoJvfZxnN4CFohiU4uhg07jGKVbZODS3M23+GdTvbGYa6q2Es5+4ACn3Q==}
+    peerDependencies:
+      react: '>=16.13.1'
+      react-dom: '>=16.13.1'
+    dependencies:
+      '@babel/runtime': 7.19.4
+      classnames: 2.3.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
   /to-fast-properties/2.0.0:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
     engines: {node: '>=4'}
@@ -1147,7 +1167,7 @@ packages:
     dev: false
 
   file:projects/omit-app.tgz:
-    resolution: {integrity: sha512-wPaPZKYjGsJnXATGpkhHw1b+WcvglddiH0c+RKZFOuv1vURFMNsOOLY1KDnkIHFZyRVQJsA/0ZlzRokFUVPvJw==, tarball: file:projects/omit-app.tgz}
+    resolution: {integrity: sha512-Dd2OID6xJTMUQam0pJO06s5BFhFQnZhinW84RdpOIcG8Imk3VGqrO/FfVPEmJ4apvTFMafNsTxhcSfwVzxKRyQ==, tarball: file:projects/omit-app.tgz}
     name: '@rush-temp/omit-app'
     version: 0.0.0
     dependencies:
@@ -1158,6 +1178,7 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-router-dom: 6.4.2_react-dom@18.2.0+react@18.2.0
+      tdesign-icons-react: 0.1.6_react-dom@18.2.0+react@18.2.0
       typescript: 4.8.4
       vite: 3.2.0
     transitivePeerDependencies:
