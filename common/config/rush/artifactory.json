@@ -29,7 +29,7 @@
      * when the token is updated.  This could be used for example to configure the company registry
      * to be used whenever NPM is invoked as a standalone command (but it's not needed for Rush
      * operations like "rush add" and "rush install", which get their mappings from the monorepo's
-     * common/config/rush/.npmrc file).
+     * common/default/rush/.npmrc file).
      *
      * NOTE: The ~/.npmrc settings are global for the user account on a given machine, so be careful
      * about adding settings that may interfere with other work outside the monorepo.

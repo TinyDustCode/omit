@@ -7,7 +7,7 @@ import LinkPage from './ pages/link'
 function App() {
     const [mode, setMode] = useState<'light' | 'dark'>('light')
     return (
-        <OmitProvider theme={{mode}}>
+        <OmitProvider config={{themeMode: mode}}>
             <OmitStyles/>
             <div style={{
                 height: '100vh',
@@ -118,7 +118,7 @@ function App() {
                 </div>
 
                 <div>
-                    <Link to='/link'></Link>
+                    <Link to='/link'>link</Link>
                 </div>
                 <Routes>
                     <Route path='/link' element={<LinkPage />} />

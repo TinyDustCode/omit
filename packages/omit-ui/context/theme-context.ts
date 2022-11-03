@@ -1,8 +1,5 @@
 import {createContext} from "react";
-import {OmitPalette, OmitDefaultPaletteMode} from 'omit-injection'
-import {OmitThemeTypes} from "../types/config";
+import {OmitThemeTypes} from "../types/provider";
+import {OmitDefaultTheme} from "../default/theme";
 
-export const ThemeContext = createContext<OmitThemeTypes>({
-    palette: OmitPalette,
-    mode: OmitDefaultPaletteMode
-});
+export const ThemeContext = createContext<OmitThemeTypes>(OmitDefaultTheme);

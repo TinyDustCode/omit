@@ -1,12 +1,12 @@
 import {css, SerializedStyles} from '@emotion/react'
-import {OmitConfigThemeTypes} from "../../types/config";
+import {OmitGlobalConfig} from "../../types/provider";
 
 /**
  * @description  rest.css
  * @param
  * @return {*}
 */
-export const creatBaseStyle = (_: OmitConfigThemeTypes):SerializedStyles => {
+export const creatBaseStyle = (_: OmitGlobalConfig):SerializedStyles => {
     return css`
       html,
       body,

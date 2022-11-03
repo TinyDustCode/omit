@@ -1,5 +1,4 @@
-import {OmitModeTypes} from "../types/palette";
+import {OmitThemeModeTypes} from "../types/palette";
 
-export const OmitDefaultPaletteMode: OmitModeTypes = 'light';
-
-export const OmitDefaultPrefixName: string = 'omit';
+export const OmitDefaultMode: OmitThemeModeTypes = 'light';
+export const OmitDefaultPrefix: string = 'omit';
