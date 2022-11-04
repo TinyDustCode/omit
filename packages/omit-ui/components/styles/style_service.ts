@@ -6,8 +6,9 @@ import { LinkStyle } from '../link/style';
 import { creatBaseStyle } from './base-style';
 
 export const createBaseStyles = (globalConfig: OmitGlobalConfig): SerializedStyles => {
-  return css`
-    ${creatBaseStyle(globalConfig)}
-    ${ButtonStyle(globalConfig)}
-  `;
-};
+    return css`
+      ${creatBaseStyle(globalConfig)}
+      ${ButtonStyle(globalConfig)}
+      ${LinkStyle(globalConfig)}
+    `
+}
