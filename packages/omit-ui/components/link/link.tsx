@@ -17,10 +17,10 @@ export const Link: FC<linkBaseProps> = props => {
     suffixIcon,
   } = props;
   const PrefixCName = `${prefixName}_link`;
-  const renderIcon = (icon?: ReactElement) => {
+  const renderIcon = (icon?: ReactElement, type: 'pre' | 'suf') => {
     if (icon) {
       return React.cloneElement(icon, {
-        className: `${PrefixCName}_icon`,
+        className: `${PrefixCName}_${size}_${type}Icon`,
       });
     }
     return null;
@@ -41,9 +41,9 @@ export const Link: FC<linkBaseProps> = props => {
   const renderLinkContent = useMemo(() => {
     return (
       <>
-        {prefixIcon ? renderIcon(prefixIcon) : null}
+        {prefixIcon ? renderIcon(prefixIcon, 'pre') : null}
         {children}
-        {suffixIcon ? renderIcon(suffixIcon) : null}
+        {suffixIcon ? renderIcon(suffixIcon, 'suf') : null}
       </>
     );
   }, [children]);

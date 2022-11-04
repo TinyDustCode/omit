@@ -86,13 +86,28 @@ function LinkPage(): JSX.Element {
         <Link theme='primary' prefixIcon={<LinkIcon />} size='large'>
           primary
         </Link>
-        <Link theme='success' prefixIcon={<LinkIcon />} size='medium'>
+        <Link theme='success' prefixIcon={<JumpIcon />} size='medium'>
           success
         </Link>
         <Link theme='warning' prefixIcon={<LinkIcon />} size='small'>
           warning
         </Link>
-        <Link theme='danger' prefixIcon={<LinkIcon />} size='small'>
+        <Link theme='danger' prefixIcon={<JumpIcon />} size='small'>
+          danger
+        </Link>
+      </div>
+
+      <div className='links'>
+        <Link theme='primary' suffixIcon={<LinkIcon />} size='large'>
+          primary
+        </Link>
+        <Link theme='success' suffixIcon={<JumpIcon />} size='medium'>
+          success
+        </Link>
+        <Link theme='warning' suffixIcon={<LinkIcon />} size='small'>
+          warning
+        </Link>
+        <Link theme='danger' suffixIcon={<JumpIcon />} size='small'>
           danger
         </Link>
       </div>
