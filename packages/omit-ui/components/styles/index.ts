@@ -1,3 +1,3 @@
-import {OmitStyles} from './style';
+import { OmitStyles } from './style';
 
 export default OmitStyles;

@@ -11,15 +11,6 @@
     "target": "es2017",
     "jsx": "react-jsx"
   },
-  "include": [
-    "components/**/*",
-    "context/**/*",
-    "types/**/*",
-    "utils/**/*",
-    "index.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/dist/**/*"
-  ]
+  "include": ["components/**/*", "context/**/*", "types/**/*", "utils/**/*", "index.ts"],
+  "exclude": ["node_modules", "**/dist/**/*"]
 }

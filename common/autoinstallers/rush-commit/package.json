@@ -1,0 +1,10 @@
+{
+  "name": "rush-commit",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.2.0",
+    "execa": "^5.1.1"
+  }
+}

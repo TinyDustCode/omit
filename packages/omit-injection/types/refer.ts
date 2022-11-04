@@ -1,14 +1,17 @@
-import {OmitPaletteTypes} from "./palette";
+import { OmitPaletteTypes } from './palette';
 
-export type PaletteModeReferTypes = Record<OmitPaletteTypes, { light: string, dark: string }>
+export type PaletteModeReferTypes = Record<OmitPaletteTypes, { light: string; dark: string }>;
 
-type InteractionTypes = {
-    hover: string;
-    active: string;
-    disabled: string;
+interface InteractionTypes {
+  hover: string;
+  active: string;
+  disabled: string;
 }
 
-export type PaletteInteractionReferTypes = Record<OmitPaletteTypes, {
+export type PaletteInteractionReferTypes = Record<
+  OmitPaletteTypes,
+  {
     light: InteractionTypes;
     dark: InteractionTypes;
-}>
+  }
+>;

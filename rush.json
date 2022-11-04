@@ -3,12 +3,9 @@
   "rushVersion": "5.81.0",
   "pnpmVersion": "6.7.1",
   "nodeSupportedVersionRange": ">=14.15.0 <15.0.0 || >15.0.0",
-  "gitPolicy": {
-  },
+  "gitPolicy": {},
 
-  "repository": {
-
-  },
+  "repository": {},
   "eventHooks": {
     "preRushInstall": [],
     "postRushInstall": [],
@@ -16,9 +13,7 @@
     "postRushBuild": []
   },
 
-  "variants": [
-
-  ],
+  "variants": [],
 
   "projects": [
     {

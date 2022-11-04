@@ -10,11 +10,7 @@
     "strict": true,
     "target": "es2017"
   },
-  "include": [
-    "src/**/*",
-    "types/**/*",
-    "index.ts"
-  ],
+  "include": ["src/**/*", "types/**/*", "index.ts"],
   "exclude": ["node_modules", "**/dist/**/*"],
   "typeRoots": ["./types/"]
 }

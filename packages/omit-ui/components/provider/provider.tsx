@@ -1,22 +1,20 @@
-import {FC} from "react";
-import {OmitConfigTypes, OmitThemeTypes} from '../../types/provider';
-import {OmitBaseNodeTypes} from "../../types/common";
+import { FC } from 'react';
+import { OmitConfigTypes, OmitThemeTypes } from '../../types/provider';
+import { OmitBaseNodeTypes } from '../../types/common';
 
-import {ConfigRenderContent} from './config';
-import {ThemeRenderContent} from './theme'
+import { ConfigRenderContent } from './config';
+import { ThemeRenderContent } from './theme';
 
-export type PropTypes = {
-    theme?: Partial<OmitThemeTypes>
-    config?: Partial<OmitConfigTypes>
-    children: OmitBaseNodeTypes;
+export interface PropTypes {
+  theme?: Partial<OmitThemeTypes>;
+  config?: Partial<OmitConfigTypes>;
+  children: OmitBaseNodeTypes;
 }
-export const OmitProvider: FC<PropTypes> = (props) => {
-    const {theme, config, children} = props;
-    return (
-        <ConfigRenderContent config={config}>
-            <ThemeRenderContent theme={theme}>
-                {children}
-            </ThemeRenderContent>
-        </ConfigRenderContent>
-    )
-}
+export const OmitProvider: FC<PropTypes> = props => {
+  const { theme, config, children } = props;
+  return (
+    <ConfigRenderContent config={config}>
+      <ThemeRenderContent theme={theme}>{children}</ThemeRenderContent>
+    </ConfigRenderContent>
+  );
+};

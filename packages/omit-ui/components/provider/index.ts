@@ -1,3 +1,3 @@
-import {OmitProvider} from "./provider";
+import { OmitProvider } from './provider';
 
-export default OmitProvider
+export default OmitProvider;

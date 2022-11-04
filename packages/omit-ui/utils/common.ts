@@ -5,17 +5,17 @@
  * @return {*} T
  */
 export function mergeObjectFnc<T, K extends T>(p1: T, p2?: Partial<K>): T {
-    let data = {...p1}
-    if (p2) {
-        for (let key in p1) {
-            if (typeof p1[key] === 'object') {
-                data[key] = mergeObjectFnc(data[key], p2[key])
-            } else {
-                data[key] = p2[key] || data[key]
-            }
-        }
+  const data = { ...p1 };
+  if (p2) {
+    for (const key in p1) {
+      if (typeof p1[key] === 'object') {
+        data[key] = mergeObjectFnc(data[key], p2[key]);
+      } else {
+        data[key] = p2[key] || data[key];
+      }
     }
-    return data
+  }
+  return data;
 }
 
 /**
@@ -25,17 +25,17 @@ export function mergeObjectFnc<T, K extends T>(p1: T, p2?: Partial<K>): T {
  * @return {*} string
  */
 export function renderClassNames(prefixClass: string, classNames: Record<string, boolean> | string[]) {
-    let classNameStr = `${prefixClass}`;
-    if (classNames instanceof Array) {
-        const machinedClassName = classNames.reduce((pre, cur): string => {
-            return `${pre} ${cur}`
-        }, classNameStr)
-        return machinedClassName
+  let classNameStr = `${prefixClass}`;
+  if (classNames instanceof Array) {
+    const machinedClassName = classNames.reduce((pre, cur): string => {
+      return `${pre} ${cur}`;
+    }, classNameStr);
+    return machinedClassName;
+  }
+  for (const key in classNames) {
+    if (classNames[key]) {
+      classNameStr = `${classNameStr} ${key}`;
     }
-    for (let key in classNames) {
-        if (classNames[key]) {
-            classNameStr = `${classNameStr} ${key}`
-        }
-    }
-    return classNameStr
+  }
+  return classNameStr;
 }
