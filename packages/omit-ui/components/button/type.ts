@@ -7,7 +7,7 @@ export type OmitButtonVariantTypes = 'outline' | 'dashed' | 'text';
 export type OmitButtonThemeTypes = 'primary' | 'success' | 'warning' | 'danger';
 export type OmitButtonShapeTypes = 'rectangle' | 'round' | 'circle';
 
-export interface ButtonBaseProps {
+export interface ButtonProps {
   className?: string;
   style?: OmitBaseStyleTypes;
   theme?: OmitButtonThemeTypes;

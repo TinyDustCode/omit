@@ -68,7 +68,7 @@ const disabledColor = (
   mode: OmitThemeModeTypes,
   palette: OmitModePaletteTypes,
 ) => {
-  const { main, disabled } = renderPaletteColor({ type, mode, palette });
+  const { disabled } = renderPaletteColor({ type, mode, palette });
   return {
     background: disabled,
     borderColor: disabled,
@@ -77,9 +77,13 @@ const disabledColor = (
     },
     [`&.${prefixName}_button_outline,&.${prefixName}_button_dashed,&.${prefixName}_button_text`]: {
       background: 'transparent',
-      color: main,
+      color: disabled,
+      [`&:hover,&:active`]: {
+        color: disabled,
+        borderColor: disabled,
+      },
       [`& .${prefixName}_button_icon`]: {
-        fill: main,
+        fill: disabled,
       },
     },
   };

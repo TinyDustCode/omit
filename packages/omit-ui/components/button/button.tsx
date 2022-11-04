@@ -1,10 +1,10 @@
 import React, { FC, ReactElement, useContext, useMemo } from 'react';
-import { ButtonBaseProps } from './type';
+import { ButtonProps } from './type';
 import { ConfigContext } from '../../context/config-contenxt';
 import { renderClassNames } from '../../utils/common';
 import LoadingIcon from './loading';
 
-export const Button: FC<ButtonBaseProps> = props => {
+export const Button: FC<ButtonProps> = props => {
   const { prefixName } = useContext(ConfigContext);
   const ButtonPrefix = `${prefixName}_button`;
   const {
