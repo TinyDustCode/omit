@@ -10,6 +10,7 @@ export interface OmitIndexTypes {
 export interface OmitSpacePointTypes {
   tiny: string;
   small: string;
+  mediumLower: string;
   medium: string;
   big: string;
   large: string;

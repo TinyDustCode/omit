@@ -12,6 +12,7 @@ export const OmitIndex: OmitIndexTypes = {
 export const OmitSpacePoint: OmitSpacePointTypes = {
   tiny: '4px',
   small: '8px',
+  mediumLower: '12px',
   medium: '16px',
   big: '24px',
   large: '32px',

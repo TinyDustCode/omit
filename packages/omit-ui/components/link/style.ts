@@ -1,7 +1,7 @@
 import { css, SerializedStyles } from '@emotion/react';
 import { OmitGlobalConfig } from '../../types/provider';
 import { renderPaletteColor } from '../../utils/palette';
-import { OmitModePaletteTypes, OmitThemeModeTypes, OmitPaletteTypes } from 'omit-injection';
+import { OmitSpacePointTypes, OmitModePaletteTypes, OmitThemeModeTypes, OmitPaletteTypes } from 'omit-injection';
 
 // default
 const defaultLink = (globalConfig: OmitGlobalConfig) => {
@@ -134,27 +134,40 @@ const renderDisabled = (globalConfig: OmitGlobalConfig) => {
   });
 };
 
-const iconColor = (type: OmitPaletteTypes, mode: OmitThemeModeTypes, palette: OmitModePaletteTypes) => {
-  const { main } = renderPaletteColor({ type, mode, palette });
+const iconColor = (
+  size: 'tiny' | 'small' | 'mediumLower' | 'medium' | 'big' | 'large',
+  type: 'marginRight' | 'marginLeft',
+  globalConfig: OmitGlobalConfig,
+) => {
+  const {
+    config: { spacePoint },
+  } = globalConfig;
   return {
-    color: main,
+    [type]: spacePoint[`${size}`],
   };
 };
 
 const renderPrefixIcon = (globalConfig: OmitGlobalConfig) => {
   const {
-    config: { prefixName, spacePoint },
-    theme: { themePalette },
+    config: { prefixName },
   } = globalConfig;
   const PrefixCName = `${prefixName}_link`;
   return css({
-    // [`.${PrefixCName}_primary_icon`]: iconColor('primary', themeMode, themePalette),
-    // [`.${PrefixCName}_success_icon`]: iconColor('success', themeMode, themePalette),
-    // [`.${PrefixCName}_warning_icon`]: iconColor('warning', themeMode, themePalette),
-    // [`.${PrefixCName}_danger_icon`]: iconColor('danger', themeMode, themePalette),
-    [`.${PrefixCName}_prefixIcon`]: {
-      marginRight: spacePoint.small,
-    },
+    [`.${PrefixCName}_small_preIcon`]: iconColor('tiny', 'marginRight', globalConfig),
+    [`.${PrefixCName}_medium_preIcon`]: iconColor('small', 'marginRight', globalConfig),
+    [`.${PrefixCName}_large_preIcon`]: iconColor('mediumLower', 'marginRight', globalConfig),
+  });
+};
+
+const renderSuffixIcon = (globalConfig: OmitGlobalConfig) => {
+  const {
+    config: { prefixName },
+  } = globalConfig;
+  const PrefixCName = `${prefixName}_link`;
+  return css({
+    [`.${PrefixCName}_small_sufIcon`]: iconColor('tiny', 'marginLeft', globalConfig),
+    [`.${PrefixCName}_medium_sufIcon`]: iconColor('small', 'marginLeft', globalConfig),
+    [`.${PrefixCName}_large_sufIcon`]: iconColor('mediumLower', 'marginLeft', globalConfig),
   });
 };
 
@@ -167,8 +180,9 @@ export const LinkStyle = (configTheme: OmitGlobalConfig): SerializedStyles => {
     ${themeLink(configTheme)},
       ${linkSize(prefixName)},
       ${renderHover(prefixName)},
-      ${renderUnderline(prefixName)}
-      ${renderDisabled(configTheme)}
-      ${renderPrefixIcon(configTheme)}
+      ${renderUnderline(prefixName)},
+      ${renderDisabled(configTheme)},
+      ${renderPrefixIcon(configTheme)},
+      ${renderSuffixIcon(configTheme)}
   `;
 };
