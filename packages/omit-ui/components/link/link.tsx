@@ -1,9 +1,8 @@
-import React, { FC, useMemo, useContext, ReactElement } from 'react';
+import React, { FC, useMemo, useContext, ReactElement, LegacyRef } from 'react';
 import { linkBaseProps } from './type';
 import { ConfigContext } from '../../context/config-contenxt';
 import { renderClassNames } from '../../utils/common';
-
-export const Link: FC<linkBaseProps> = props => {
+export const Link: FC<linkBaseProps> = React.forwardRef((props, ref: LegacyRef<HTMLAnchorElement>) => {
   const { prefixName } = useContext(ConfigContext);
   // init
   const {
@@ -15,6 +14,10 @@ export const Link: FC<linkBaseProps> = props => {
     disabled = false,
     prefixIcon,
     suffixIcon,
+    className = '',
+    href = '',
+    target = '_blank',
+    onClick,
   } = props;
   const PrefixCName = `${prefixName}_link`;
   const renderIcon = (type: 'pre' | 'suf', icon?: ReactElement) => {
@@ -35,8 +38,8 @@ export const Link: FC<linkBaseProps> = props => {
       [`${PrefixCName}_prefixIcon`]: !!prefixIcon,
       [`${PrefixCName}_suffixIcon`]: !!suffixIcon,
     };
-    return renderClassNames(PrefixCName, classNames);
-  }, []);
+    return renderClassNames(PrefixCName, classNames) + className;
+  }, [className]);
 
   const renderLinkContent = useMemo(() => {
     return (
@@ -48,5 +51,14 @@ export const Link: FC<linkBaseProps> = props => {
     );
   }, [children]);
 
-  return <a className={linkClass}>{renderLinkContent}</a>;
-};
+  const linkEvent = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    if (disabled) return;
+    onClick?.(e);
+  };
+
+  return (
+    <a ref={ref} className={linkClass} href={disabled || href ? href : undefined} target={target} onClick={linkEvent}>
+      {renderLinkContent}
+    </a>
+  );
+});

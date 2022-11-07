@@ -7,7 +7,7 @@ function LinkPage(): JSX.Element {
     <>
       <p>default link</p>
       <div className='links'>
-        <Link>default</Link>
+        <Link href='https://www.runoob.com/tags/att-a-target.html'>default</Link>
       </div>
       <p>theme link</p>
       <div className='links'>

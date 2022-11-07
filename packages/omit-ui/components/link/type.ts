@@ -14,5 +14,7 @@ export interface linkBaseProps {
   children?: OmitBaseNodeTypes;
   prefixIcon?: ReactElement;
   suffixIcon?: ReactElement;
+  href?: string;
+  target?: '_blank' | '_self' | '_parent' | '_top' | 'framename';
   onClick?: (event: OmitClickEvent) => void;
 }

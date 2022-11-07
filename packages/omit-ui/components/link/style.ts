@@ -13,6 +13,7 @@ const defaultLink = (globalConfig: OmitGlobalConfig) => {
       cursor: 'pointer',
       color: 'rgba(0, 0, 0, 0.9)',
       position: 'relative',
+      textDecoration: 'none',
       '&:after': {
         content: '""',
         position: 'absolute',
@@ -110,6 +111,7 @@ const disabledColor = (type: OmitPaletteTypes, mode: OmitThemeModeTypes, palette
     color: disabled,
     '&:after': {
       borderColor: disabled,
+      opacity: 0,
     },
   };
 };
@@ -124,7 +126,7 @@ const renderDisabled = (globalConfig: OmitGlobalConfig) => {
   console.log(globalConfig, 'globalConfig');
 
   return css({
-    [`&.${PrefixCName}_disabled`]: {
+    [`.${PrefixCName}_disabled`]: {
       cursor: 'not-allowed',
       [`&.${PrefixCName}_primary`]: disabledColor('primary', themeMode, themePalette),
       [`&.${PrefixCName}_success`]: disabledColor('success', themeMode, themePalette),
@@ -181,8 +183,8 @@ export const LinkStyle = (configTheme: OmitGlobalConfig): SerializedStyles => {
       ${linkSize(prefixName)},
       ${renderHover(prefixName)},
       ${renderUnderline(prefixName)},
-      ${renderDisabled(configTheme)},
       ${renderPrefixIcon(configTheme)},
-      ${renderSuffixIcon(configTheme)}
+      ${renderSuffixIcon(configTheme)},
+      ${renderDisabled(configTheme)},
   `;
 };
