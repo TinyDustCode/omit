@@ -41,9 +41,9 @@ export const Link: FC<linkBaseProps> = props => {
   const renderLinkContent = useMemo(() => {
     return (
       <>
-        {prefixIcon ? renderIcon(prefixIcon, 'pre') : null}
+        {prefixIcon ? renderIcon('pre', prefixIcon) : null}
         {children}
-        {suffixIcon ? renderIcon(suffixIcon, 'suf') : null}
+        {suffixIcon ? renderIcon('suf', suffixIcon) : null}
       </>
     );
   }, [children]);
