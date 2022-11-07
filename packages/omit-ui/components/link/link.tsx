@@ -1,7 +1,7 @@
 import React, { FC, useMemo, useContext, ReactElement, LegacyRef } from 'react';
 import { linkBaseProps } from './type';
 import { ConfigContext } from '../../context/config-contenxt';
-import { renderClassNames } from '../../utils/common';
+import classnames from 'classnames';
 export const Link: FC<linkBaseProps> = React.forwardRef((props, ref: LegacyRef<HTMLAnchorElement>) => {
   const { prefixName } = useContext(ConfigContext);
   // init
@@ -29,16 +29,18 @@ export const Link: FC<linkBaseProps> = React.forwardRef((props, ref: LegacyRef<H
     return null;
   };
   const linkClass = useMemo(() => {
-    const classNames = {
-      [`${PrefixCName}_${theme}`]: true,
-      [`${PrefixCName}_${size}`]: true,
-      [`${PrefixCName}_underline`]: !!underline,
-      [`${PrefixCName}_disabled`]: !!disabled,
-      [`${PrefixCName}_hover_${hover}`]: true,
-      [`${PrefixCName}_prefixIcon`]: !!prefixIcon,
-      [`${PrefixCName}_suffixIcon`]: !!suffixIcon,
-    };
-    return renderClassNames(PrefixCName, classNames) + className;
+    return classnames(
+      [PrefixCName],
+      [`${PrefixCName}_${theme}`],
+      [`${PrefixCName}_${size}`],
+      [`${PrefixCName}_hover_${hover}`],
+      {
+        [`${PrefixCName}_underline`]: !!underline,
+        [`${PrefixCName}_disabled`]: !!disabled,
+        [`${PrefixCName}_prefixIcon`]: !!prefixIcon,
+        [`${PrefixCName}_suffixIcon`]: !!suffixIcon,
+      },
+    );
   }, [className]);
 
   const renderLinkContent = useMemo(() => {
