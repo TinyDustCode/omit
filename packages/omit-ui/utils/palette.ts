@@ -1,5 +1,10 @@
-import { OmitModePaletteTypes, OmitPaletteTypes, OmitThemeModeTypes } from 'omit-injection';
-import { OmitPMRefer, OmitPIRefer } from 'omit-injection';
+import {
+  OmitModePaletteTypes,
+  OmitPaletteColorTypes,
+  OmitPaletteTypes,
+  OmitThemeModeTypes,
+} from "omit-injection";
+import { OmitPMRefer, OmitPIRefer } from "omit-injection";
 
 interface FunctionProps {
   type: OmitPaletteTypes;
@@ -14,8 +19,11 @@ interface FunctionProps {
  */
 const renderPMCByMode = (payload: FunctionProps) => {
   const { type, mode, palette } = payload;
-  const selectPaletteData: Record<string, string> = palette[mode][type];
-  const selectColor: string = OmitPMRefer[type][mode];
+  const selectPaletteData: OmitPaletteColorTypes[typeof type] =
+    palette[mode][type];
+  const selectColor = OmitPMRefer[type][
+    mode
+  ] as keyof OmitPaletteColorTypes[typeof type];
   return selectPaletteData[selectColor];
 };
 /**
@@ -25,8 +33,12 @@ const renderPMCByMode = (payload: FunctionProps) => {
  */
 export const renderPICByMode = (payload: FunctionProps) => {
   const { type, mode, palette } = payload;
-  const selectPaletteData: Record<string, string> = palette[mode][type];
-  const { hover, active, disabled } = OmitPIRefer[type][mode];
+  const selectPaletteData: OmitPaletteColorTypes[typeof type] =
+    palette[mode][type];
+  const { hover, active, disabled } = OmitPIRefer[type][mode] as Record<
+    "hover" | "active" | "disabled",
+    keyof OmitPaletteColorTypes[typeof type]
+  >;
   return {
     hover: selectPaletteData[hover],
     active: selectPaletteData[active],

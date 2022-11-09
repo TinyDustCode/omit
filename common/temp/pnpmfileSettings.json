@@ -1,0 +1,7 @@
+{
+  "allPreferredVersions": {},
+  "allowedAlternativeVersions": {},
+  "workspaceVersions": {},
+  "semverPath": "/opt/homebrew/lib/node_modules/@microsoft/rush/node_modules/semver/index.js",
+  "userPnpmfilePath": "/Users/mangosteen/Desktop/person/project/omit/common/config/rush/.pnpmfile.cjs"
+}

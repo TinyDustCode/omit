@@ -17,9 +17,25 @@
       "autoinstallerName": "rush-commit",
       "shellCommand": "node common/autoinstallers/rush-commit/commit-lint.js",
       "safeForSimultaneousRushProcesses": true
+    },
+    {
+      "name": "build:watch",
+      "commandKind": "bulk",
+      "summary": "Build projects and watch for changes",
+      "description": "For details, see the article \"Using watch mode\" on the Rush website: https://rushjs.io/",
+      "incremental": true,
+      "enableParallelism": true,
+      "watchForChanges": true
+    },
+    {
+      "name": "watch",
+      "commandKind": "global",
+      "summary": "watch ui",
+      "description": "Run this command watch dependencies to omit-app",
+      "shellCommand": "rush build:watch --to-except omit-app",
+      "safeForSimultaneousRushProcesses": true
     }
   ],
 
-  "parameters": [
-  ]
+  "parameters": []
 }

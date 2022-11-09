@@ -1,23 +1,48 @@
 {
   "name": "omit-ui",
-  "version": "1.0.0",
-  "main": "index.ts",
-  "scripts": {
-    "start": "tsc --watch",
-    "build": "pnpm build:es && pnpm build:cjs",
-    "build:es": "tsc",
-    "build:cjs": "tsc --project tsconfig.cjs.json"
+  "version": "0.1.0",
+  "description": "Omit React UI component library",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/es/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "directory": "packages/omit-ui",
+    "url": "git+https://github.com/TinyDustCode/omit.git"
   },
-  "devDependencies": {
-    "react": "~18.2.0",
-    "@types/react": "~18.0.23",
-    "@emotion/react": "~11.10.5",
-    "typescript": "~4.8.4",
-    "eslint": "~8.26.0",
-    "@rushstack/eslint-config": "~3.1.1",
-    "classnames": "~2.3.2"
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/TinyDustCode/omit/issues"
+  },
+  "homepage": "https://github.com/TinyDustCode/omit/packages/omit-ui/README.md",
+  "scripts": {
+    "build": "rm -rf ./dist && pnpm build:es && pnpm build:cjs",
+    "build:watch": "pnpm build:es && pnpm build:cjs",
+    "build:es": "tsc --p tsconfig.es.json",
+    "build:cjs": "tsc --p tsconfig.cjs.json",
+    "test": "jest --watch",
+    "clean": "rm -rf ./dist"
   },
   "dependencies": {
+    "@emotion/react": "~11.10.5"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.8.4",
+    "eslint": "~8.26.0",
+    "@rushstack/eslint-config": "~3.1.1",
+    "omit-injection": "~1.0.0"
+  },
+  "peerDependencies": {
     "omit-injection": "~1.0.0"
   }
 }

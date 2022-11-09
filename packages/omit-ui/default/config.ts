@@ -1,4 +1,3 @@
-import { OmitConfigTypes } from '../types/provider';
 import {
   OmitDefaultMode,
   OmitDefaultPrefix,
@@ -6,7 +5,8 @@ import {
   OmitIndex,
   OmitRadius,
   OmitSpacePoint,
-} from 'omit-injection';
+} from "omit-injection";
+import { OmitConfigTypes } from "../types/provider";
 
 export const OmitDefaultConfig: OmitConfigTypes = {
   prefixName: OmitDefaultPrefix,

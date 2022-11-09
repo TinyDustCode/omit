@@ -1,4 +1,4 @@
-interface PrimaryColorTypes {
+export interface PrimaryColorTypes {
   p1: string;
   p2: string;
   p3: string;
@@ -10,7 +10,7 @@ interface PrimaryColorTypes {
   p9: string;
   p10: string;
 }
-interface SuccessColorTypes {
+export interface SuccessColorTypes {
   g1: string;
   g2: string;
   g3: string;
@@ -22,7 +22,7 @@ interface SuccessColorTypes {
   g9: string;
   g10: string;
 }
-interface WarningColorTypes {
+export interface WarningColorTypes {
   o1: string;
   o2: string;
   o3: string;
@@ -34,7 +34,7 @@ interface WarningColorTypes {
   o9: string;
   o10: string;
 }
-interface DangerColorTypes {
+export interface DangerColorTypes {
   r1: string;
   r2: string;
   r3: string;
@@ -71,9 +71,9 @@ export interface OmitFontPaletteTypes {
   d14: string;
 }
 
-export type OmitPaletteTypes = 'primary' | 'success' | 'warning' | 'danger';
+export type OmitPaletteTypes = "primary" | "success" | "warning" | "danger";
 
-export type OmitThemeModeTypes = 'light' | 'dark';
+export type OmitThemeModeTypes = "light" | "dark";
 
 export interface OmitModePaletteTypes {
   light: OmitPaletteColorTypes;

@@ -1,0 +1,10 @@
+{
+  "name": "ci-rush",
+  "version": "0.0.0",
+  "dependencies": {
+    "@microsoft/rush": "5.81.0"
+  },
+  "description": "DON'T WARN",
+  "repository": "DON'T WARN",
+  "license": "MIT"
+}
