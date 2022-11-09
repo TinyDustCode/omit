@@ -2,6 +2,9 @@
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
   "rushVersion": "5.81.0",
   "pnpmVersion": "6.7.1",
+  "pnpmOptions": {
+    "pnpmStore": "global"
+  },
   "nodeSupportedVersionRange": ">=14.15.0 <15.0.0 || >15.0.0",
   "gitPolicy": {},
 
@@ -17,16 +20,20 @@
 
   "projects": [
     {
+      "packageName": "omit-app",
+      "projectFolder": "packages/omit-app"
+    },
+    //    {
+    //      "packageName": "omit-icon",
+    //      "projectFolder": "packages/omit-icon"
+    //    },
+    {
       "packageName": "omit-ui",
       "projectFolder": "packages/omit-ui"
     },
     {
       "packageName": "omit-injection",
       "projectFolder": "packages/omit-injection"
-    },
-    {
-      "packageName": "omit-app",
-      "projectFolder": "packages/omit-app"
     }
   ]
 }

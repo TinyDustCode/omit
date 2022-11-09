@@ -1,23 +1,28 @@
-import React, { FC, ReactElement, useContext, useMemo } from 'react';
-import { ButtonProps } from './type';
-import { ConfigContext } from '../../context/config-contenxt';
-import { renderClassNames } from '../../utils/common';
-import LoadingIcon from './loading';
+import React, { FC, ReactElement, useContext, useMemo } from "react";
+import { ButtonProps } from "./type";
+import { ConfigContext } from "../../context/config-contenxt";
+import { renderClassNames } from "../../utils/common";
+import LoadingIcon from "./loading";
+import { OmitClickEvent } from "../../types/events";
 
-export const Button: FC<ButtonProps> = props => {
+export const Button: FC<ButtonProps> = (props) => {
   const { prefixName } = useContext(ConfigContext);
   const ButtonPrefix = `${prefixName}_button`;
   const {
     icon,
-    theme = 'primary',
-    size = 'medium',
+    theme = "primary",
+    size = "medium",
     variant,
-    shape = 'rectangle',
+    shape = "rectangle",
     disabled = false,
     loading = false,
     onClick,
     children,
   } = props;
+
+  const handleClick = (e: OmitClickEvent) => {
+    onClick && onClick(e);
+  };
 
   const renderIcon = (icon?: ReactElement) => {
     if (!icon) return null;
@@ -46,7 +51,11 @@ export const Button: FC<ButtonProps> = props => {
     return renderClassNames(ButtonPrefix, classNames);
   }, [loading, disabled, variant]);
 
-  return <button className={renderClass}>{renderButtonContent}</button>;
+  return (
+    <button onClick={handleClick} className={renderClass}>
+      {renderButtonContent}
+    </button>
+  );
 };
 
-Button.displayName = 'Button';
+Button.displayName = "Button";

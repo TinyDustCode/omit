@@ -1,11 +1,14 @@
-import { OmitBaseSizeTypes, OmitBaseNodeTypes, OmitBaseStyleTypes } from '../../types/common';
+import { ReactElement } from "react";
+import {
+  OmitBaseSizeTypes,
+  OmitBaseNodeTypes,
+  OmitBaseStyleTypes,
+} from "../../types/common";
+import { OmitClickEvent } from "../../types/events";
 
-import { OmitClickEvent } from '../../types/events';
-import { ReactElement } from 'react';
-
-export type OmitButtonVariantTypes = 'outline' | 'dashed' | 'text';
-export type OmitButtonThemeTypes = 'primary' | 'success' | 'warning' | 'danger';
-export type OmitButtonShapeTypes = 'rectangle' | 'round' | 'circle';
+export type OmitButtonVariantTypes = "outline" | "dashed" | "text";
+export type OmitButtonThemeTypes = "primary" | "success" | "warning" | "danger";
+export type OmitButtonShapeTypes = "rectangle" | "round" | "circle";
 
 export interface ButtonProps {
   className?: string;
