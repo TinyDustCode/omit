@@ -1,9 +1,0 @@
-Invoking: pnpm build:es && pnpm build:cjs 
-
-> omit-ui@0.1.0 build:es /Users/mangosteen/Desktop/person/project/omit/packages/omit-ui
-> tsc --p tsconfig.es.json
-
-
-> omit-ui@0.1.0 build:cjs /Users/mangosteen/Desktop/person/project/omit/packages/omit-ui
-> tsc --p tsconfig.cjs.json
-
