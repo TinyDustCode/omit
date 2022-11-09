@@ -76,4 +76,5 @@ common/autoinstallers/*/.npmrc
 # Build files
 dist
 .rush
+pnpm-lock.yaml
 node_modules

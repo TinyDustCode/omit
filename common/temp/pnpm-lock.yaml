@@ -11299,7 +11299,7 @@ packages:
   file:projects/omit-ui.tgz:
     resolution:
       {
-        integrity: sha512-678kv6NyWP3QmB3jOE4PsBB/ARcfSNwgu/V+QytLBd5ZMqggkw91/NQgd8x4IiSmS3zpob2k+R3+rKEhEqpS5A==,
+        integrity: sha512-ZGyR8OfA9ex9UaeiAOj2qutiJZevhTMnl+Y9Bs5X7Th8GmfpkReGbR/7BMiRlxiYmtP1+GbiNF7xWEYRI0v+WA==,
         tarball: file:projects/omit-ui.tgz,
       }
     name: "@rush-temp/omit-ui"
@@ -11312,6 +11312,7 @@ packages:
       "@types/react": 18.0.25
       "@types/react-dom": 18.0.8
       chokidar: 3.5.3
+      classnames: 2.3.2
       eslint: 8.26.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0

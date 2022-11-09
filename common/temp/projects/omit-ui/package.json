@@ -7,6 +7,7 @@
     "@rushstack/eslint-config": "~3.1.1",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
+    "classnames": "~2.3.2",
     "eslint": "~8.26.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

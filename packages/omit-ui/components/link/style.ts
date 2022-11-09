@@ -1,7 +1,11 @@
-import { css, SerializedStyles } from '@emotion/react';
-import { OmitGlobalConfig } from '../../types/provider';
-import { renderPaletteColor } from '../../utils/palette';
-import { OmitSpacePointTypes, OmitModePaletteTypes, OmitThemeModeTypes, OmitPaletteTypes } from 'omit-injection';
+import { css, SerializedStyles } from "@emotion/react";
+import { OmitGlobalConfig } from "../../types/provider";
+import { renderPaletteColor } from "../../utils/palette";
+import {
+  OmitModePaletteTypes,
+  OmitThemeModeTypes,
+  OmitPaletteTypes,
+} from "omit-injection";
 
 // default
 const defaultLink = (globalConfig: OmitGlobalConfig) => {
@@ -10,19 +14,19 @@ const defaultLink = (globalConfig: OmitGlobalConfig) => {
   } = globalConfig;
   return css({
     [`.${prefixName}_link`]: {
-      cursor: 'pointer',
-      color: 'rgba(0, 0, 0, 0.9)',
-      position: 'relative',
-      textDecoration: 'none',
-      '&:after': {
+      cursor: "pointer",
+      color: "rgba(0, 0, 0, 0.9)",
+      position: "relative",
+      textDecoration: "none",
+      "&:after": {
         content: '""',
-        position: 'absolute',
+        position: "absolute",
         left: 0,
         right: 0,
         height: 0,
         bottom: 0,
         borderBottom: `1px solid rgba(0, 0, 0, 0.9)`,
-        transition: 'all .2s linear',
+        transition: "all .2s linear",
         opacity: 0,
       },
     },
@@ -30,11 +34,15 @@ const defaultLink = (globalConfig: OmitGlobalConfig) => {
 };
 
 // 渲染theme类型样式
-const renderThemeColor = (type: OmitPaletteTypes, mode: OmitThemeModeTypes, palette: OmitModePaletteTypes) => {
-  const { main, hover, active } = renderPaletteColor({ type, mode, palette });
+const renderThemeColor = (
+  type: OmitPaletteTypes,
+  mode: OmitThemeModeTypes,
+  palette: OmitModePaletteTypes
+) => {
+  const { main } = renderPaletteColor({ type, mode, palette });
   return {
     color: main,
-    '&:after': {
+    "&:after": {
       borderColor: main,
     },
   };
@@ -48,10 +56,26 @@ const themeLink = (globalConfig: OmitGlobalConfig) => {
   } = globalConfig;
   const PrefixCName = `${prefixName}_link`;
   return {
-    [`.${PrefixCName}_primary`]: renderThemeColor('primary', themeMode, themePalette),
-    [`.${PrefixCName}_success`]: renderThemeColor('success', themeMode, themePalette),
-    [`.${PrefixCName}_warning`]: renderThemeColor('warning', themeMode, themePalette),
-    [`.${PrefixCName}_danger`]: renderThemeColor('danger', themeMode, themePalette),
+    [`.${PrefixCName}_primary`]: renderThemeColor(
+      "primary",
+      themeMode,
+      themePalette
+    ),
+    [`.${PrefixCName}_success`]: renderThemeColor(
+      "success",
+      themeMode,
+      themePalette
+    ),
+    [`.${PrefixCName}_warning`]: renderThemeColor(
+      "warning",
+      themeMode,
+      themePalette
+    ),
+    [`.${PrefixCName}_danger`]: renderThemeColor(
+      "danger",
+      themeMode,
+      themePalette
+    ),
   };
 };
 
@@ -61,18 +85,18 @@ const linkSize = (prefixName: string) => {
   return {
     [`.${PrefixCName}_small`]: {
       fontWeight: 400,
-      fontSize: '12px',
-      lineHeight: '20px',
+      fontSize: "12px",
+      lineHeight: "20px",
     },
     [`.${PrefixCName}_medium`]: {
       fontWeight: 400,
-      fontSize: '14px',
-      lineHeight: '22px',
+      fontSize: "14px",
+      lineHeight: "22px",
     },
     [`.${PrefixCName}_large`]: {
       fontWeight: 400,
-      fontSize: '16px',
-      lineHeight: '24px',
+      fontSize: "16px",
+      lineHeight: "24px",
     },
   };
 };
@@ -92,12 +116,12 @@ const renderHover = (prefixName: string) => {
   const PrefixCName = `${prefixName}_link_hover`;
   return css({
     [`.${PrefixCName}_underline:hover`]: {
-      '&:after': {
+      "&:after": {
         opacity: 1,
       },
     },
     [`.${PrefixCName}_color:hover`]: {
-      '&:after': {
+      "&:after": {
         opacity: 0,
       },
     },
@@ -105,11 +129,15 @@ const renderHover = (prefixName: string) => {
 };
 
 // disabledColor
-const disabledColor = (type: OmitPaletteTypes, mode: OmitThemeModeTypes, palette: OmitModePaletteTypes) => {
+const disabledColor = (
+  type: OmitPaletteTypes,
+  mode: OmitThemeModeTypes,
+  palette: OmitModePaletteTypes
+) => {
   const { disabled } = renderPaletteColor({ type, mode, palette });
   return {
     color: disabled,
-    '&:after': {
+    "&:after": {
       borderColor: disabled,
       opacity: 0,
     },
@@ -123,23 +151,39 @@ const renderDisabled = (globalConfig: OmitGlobalConfig) => {
     theme: { themePalette },
   } = globalConfig;
   const PrefixCName = `${prefixName}_link`;
-  console.log(globalConfig, 'globalConfig');
+  console.log(globalConfig, "globalConfig");
 
   return css({
     [`.${PrefixCName}_disabled`]: {
-      cursor: 'not-allowed',
-      [`&.${PrefixCName}_primary`]: disabledColor('primary', themeMode, themePalette),
-      [`&.${PrefixCName}_success`]: disabledColor('success', themeMode, themePalette),
-      [`&.${PrefixCName}_warning`]: disabledColor('warning', themeMode, themePalette),
-      [`&.${PrefixCName}_danger`]: disabledColor('danger', themeMode, themePalette),
+      cursor: "not-allowed",
+      [`&.${PrefixCName}_primary`]: disabledColor(
+        "primary",
+        themeMode,
+        themePalette
+      ),
+      [`&.${PrefixCName}_success`]: disabledColor(
+        "success",
+        themeMode,
+        themePalette
+      ),
+      [`&.${PrefixCName}_warning`]: disabledColor(
+        "warning",
+        themeMode,
+        themePalette
+      ),
+      [`&.${PrefixCName}_danger`]: disabledColor(
+        "danger",
+        themeMode,
+        themePalette
+      ),
     },
   });
 };
 
 const iconColor = (
-  size: 'tiny' | 'small' | 'mediumLower' | 'medium' | 'big' | 'large',
-  type: 'marginRight' | 'marginLeft',
-  globalConfig: OmitGlobalConfig,
+  size: "tiny" | "small" | "mediumLower" | "medium" | "big" | "large",
+  type: "marginRight" | "marginLeft",
+  globalConfig: OmitGlobalConfig
 ) => {
   const {
     config: { spacePoint },
@@ -155,9 +199,21 @@ const renderPrefixIcon = (globalConfig: OmitGlobalConfig) => {
   } = globalConfig;
   const PrefixCName = `${prefixName}_link`;
   return css({
-    [`.${PrefixCName}_small_preIcon`]: iconColor('tiny', 'marginRight', globalConfig),
-    [`.${PrefixCName}_medium_preIcon`]: iconColor('small', 'marginRight', globalConfig),
-    [`.${PrefixCName}_large_preIcon`]: iconColor('mediumLower', 'marginRight', globalConfig),
+    [`.${PrefixCName}_small_preIcon`]: iconColor(
+      "tiny",
+      "marginRight",
+      globalConfig
+    ),
+    [`.${PrefixCName}_medium_preIcon`]: iconColor(
+      "small",
+      "marginRight",
+      globalConfig
+    ),
+    [`.${PrefixCName}_large_preIcon`]: iconColor(
+      "mediumLower",
+      "marginRight",
+      globalConfig
+    ),
   });
 };
 
@@ -167,9 +223,21 @@ const renderSuffixIcon = (globalConfig: OmitGlobalConfig) => {
   } = globalConfig;
   const PrefixCName = `${prefixName}_link`;
   return css({
-    [`.${PrefixCName}_small_sufIcon`]: iconColor('tiny', 'marginLeft', globalConfig),
-    [`.${PrefixCName}_medium_sufIcon`]: iconColor('small', 'marginLeft', globalConfig),
-    [`.${PrefixCName}_large_sufIcon`]: iconColor('mediumLower', 'marginLeft', globalConfig),
+    [`.${PrefixCName}_small_sufIcon`]: iconColor(
+      "tiny",
+      "marginLeft",
+      globalConfig
+    ),
+    [`.${PrefixCName}_medium_sufIcon`]: iconColor(
+      "small",
+      "marginLeft",
+      globalConfig
+    ),
+    [`.${PrefixCName}_large_sufIcon`]: iconColor(
+      "mediumLower",
+      "marginLeft",
+      globalConfig
+    ),
   });
 };
 
