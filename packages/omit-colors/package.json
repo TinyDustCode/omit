@@ -1,0 +1,20 @@
+{
+  "name": "omit-colors",
+  "version": "0.0.1",
+  "description": "color generator lib",
+  "main": "src/index.ts",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rm -rf ./dist && pnpm build:es && pnpm build:cjs",
+    "build:es": "tsc --p tsconfig.es.json",
+    "build:cjs": "tsc --p tsconfig.cjs.json"
+  },
+  "keywords": [],
+  "author": "zyl",
+  "license": "ISC"
+}

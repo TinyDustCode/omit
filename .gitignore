@@ -78,3 +78,4 @@ dist
 .rush
 pnpm-lock.yaml
 node_modules
+.log

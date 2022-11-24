@@ -7,7 +7,6 @@
   },
   "nodeSupportedVersionRange": ">=14.15.0 <15.0.0 || >15.0.0",
   "gitPolicy": {},
-
   "repository": {},
   "eventHooks": {
     "preRushInstall": [],
@@ -15,25 +14,27 @@
     "preRushBuild": [],
     "postRushBuild": []
   },
-
   "variants": [],
-
   "projects": [
     {
       "packageName": "omit-app",
       "projectFolder": "packages/omit-app"
     },
-    //    {
-    //      "packageName": "omit-icon",
-    //      "projectFolder": "packages/omit-icon"
-    //    },
     {
-      "packageName": "omit-ui",
-      "projectFolder": "packages/omit-ui"
+      "packageName": "omit-icon",
+      "projectFolder": "packages/omit-icon"
     },
     {
-      "packageName": "omit-injection",
-      "projectFolder": "packages/omit-injection"
+      "packageName": "omit-design",
+      "projectFolder": "packages/omit-design"
+    },
+    {
+      "packageName": "omit-colors",
+      "projectFolder": "packages/omit-colors"
+    },
+    {
+      "packageName": "omit-theme",
+      "projectFolder": "packages/omit-theme"
     }
   ]
 }
